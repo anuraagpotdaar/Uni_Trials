@@ -12,7 +12,6 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        Toast.makeText(this, "Toast", Toast.LENGTH_SHORT).show();
-        Toast.makeText(this, "tabdjksh", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Edited", Toast.LENGTH_SHORT).show();
     }
 }
