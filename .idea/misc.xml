@@ -3,18 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AndroidStudioProjects/UniTrials/app/src/main/res/drawable/bg_btn_primary_action.xml" value="0.242" />
         <entry key="..\:/AndroidStudioProjects/UniTrials/app/src/main/res/drawable/bg_et.xml" value="0.242" />
+        <entry key="..\:/AndroidStudioProjects/UniTrials/app/src/main/res/drawable/color_cursor.xml" value="0.242" />
+        <entry key="..\:/AndroidStudioProjects/UniTrials/app/src/main/res/drawable/ic_all_ok.xml" value="0.1995" />
+        <entry key="..\:/AndroidStudioProjects/UniTrials/app/src/main/res/drawable/ic_settings.xml" value="0.1995" />
+        <entry key="..\:/AndroidStudioProjects/UniTrials/app/src/main/res/drawable/layout_participants.xml" value="0.1995" />
         <entry key="..\:/AndroidStudioProjects/UniTrials/app/src/main/res/font/roboto_bold.xml" value="0.3927083333333333" />
         <entry key="..\:/AndroidStudioProjects/UniTrials/app/src/main/res/layout/activity_dashboard.xml" value="0.358695652173913" />
         <entry key="..\:/AndroidStudioProjects/UniTrials/app/src/main/res/layout/activity_login.xml" value="0.358695652173913" />
+        <entry key="..\:/AndroidStudioProjects/UniTrials/app/src/main/res/layout/activity_participant_onboard.xml" value="0.33" />
         <entry key="..\:/AndroidStudioProjects/UniTrials/app/src/main/res/layout/activity_participant_onboarding.xml" value="0.358695652173913" />
-        <entry key="..\:/Users/91860/AndroidStudioProjects/Uni_Trials/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.13" />
-        <entry key="..\:/Users/91860/AndroidStudioProjects/Uni_Trials/app/src/main/res/drawable/backgroud_splashscreen.xml" value="0.1" />
-        <entry key="..\:/Users/91860/AndroidStudioProjects/Uni_Trials/app/src/main/res/drawable/bg_btn_primary_action.xml" value="0.13" />
-        <entry key="..\:/Users/91860/AndroidStudioProjects/Uni_Trials/app/src/main/res/drawable/bg_et.xml" value="0.13" />
-        <entry key="..\:/Users/91860/AndroidStudioProjects/Uni_Trials/app/src/main/res/drawable/color_cursor.xml" value="0.13" />
-        <entry key="..\:/Users/91860/AndroidStudioProjects/Uni_Trials/app/src/main/res/drawable/ic_launcher_background.xml" value="0.13" />
-        <entry key="..\:/Users/91860/AndroidStudioProjects/Uni_Trials/app/src/main/res/layout/activity_login.xml" value="0.264" />
+        <entry key="..\:/AndroidStudioProjects/UniTrials/app/src/main/res/layout/layout_participants.xml" value="0.3625" />
       </map>
     </option>
   </component>
