@@ -8,13 +8,7 @@
     android:layout_height="match_parent"
     tools:context=".ParticipantOnboardActivity">
 
-<!--    <ScrollView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent">-->
+
 
         <TextView
             android:id="@+id/txt_btn_cancel"
@@ -36,7 +30,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/txt_heading"
+            android:id="@+id/lb_heading"
             style="@style/Heading"
             android:layout_marginStart="16dp"
             android:layout_marginTop="10dp"
@@ -46,13 +40,15 @@
             app:layout_constraintTop_toBottomOf="@+id/txt_btn_cancel" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/lb_subheading"
         style="@style/Subheading"
         android:layout_marginStart="16dp"
         android:text="Fill the following details to add patient"
         android:textColor="@color/Gray"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_heading" />
+        app:layout_constraintTop_toBottomOf="@+id/lb_heading" />
+
+
 
     <TextView
         android:id="@+id/lb_name"
@@ -61,7 +57,7 @@
         android:layout_marginTop="24dp"
         android:text="Name"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintTop_toBottomOf="@+id/lb_subheading" />
 
     <EditText
         android:id="@+id/text_name"
@@ -189,7 +185,4 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lb_medical_history" />
-
-
-    <!--    </ScrollView>-->
 </androidx.constraintlayout.widget.ConstraintLayout>
