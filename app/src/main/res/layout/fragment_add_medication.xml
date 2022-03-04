@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/SoftBackground"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".AddMedicationFragment">
+
+    <TextView
+        android:id="@+id/btnMedDone"
+        style="@style/Subheading"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="30dp"
+        android:text="Done"
+        android:textColor="@color/Purple"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/headingAddMed"
+        style="@style/Body.main"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="5dp"
+        android:text="Medicine name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnMedDone" />
+
+    <EditText
+        android:id="@+id/etMedName"
+        style="@style/MyEditText"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/headingAddMed" />
+
+    <CheckBox
+        android:id="@+id/cbMorning"
+        style="@style/Body.main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="30dp"
+        android:text="Morning"
+        android:textColor="@color/Purple"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etMedName" />
+
+    <CheckBox
+        android:id="@+id/cbAfternoon"
+        style="@style/Body.main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="30dp"
+        android:text="Afternoon"
+        android:textColor="@color/Purple"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cbMorning"
+        app:layout_constraintTop_toBottomOf="@+id/etMedName" />
+
+    <CheckBox
+        android:id="@+id/cbEvening"
+        style="@style/Body.main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="30dp"
+        android:text="Evening"
+        android:textColor="@color/Purple"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cbAfternoon"
+        app:layout_constraintTop_toBottomOf="@+id/etMedName" />
+
+    <CheckBox
+        android:id="@+id/cbNight"
+        style="@style/Body.main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="30dp"
+        android:text="Night"
+        android:textColor="@color/Purple"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cbEvening"
+        app:layout_constraintTop_toBottomOf="@+id/etMedName" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
