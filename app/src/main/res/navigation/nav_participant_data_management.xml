@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_participant_data_management"
+    app:startDestination="@id/participantDetailsFragment">
+
+    <fragment
+        android:id="@+id/medicationFragment"
+        android:name="com.anuraagpotdaar.unitrials.MedicationFragment"
+        android:label="fragment_medication"
+        tools:layout="@layout/fragment_medication" />
+    <fragment
+        android:id="@+id/participantDetailsFragment"
+        android:name="com.anuraagpotdaar.unitrials.ParticipantDetailsFragment"
+        android:label="fragment_participant_details"
+        tools:layout="@layout/fragment_participant_details" >
+        <action
+            android:id="@+id/action_participantDetailsFragment_to_medicationFragment"
+            app:destination="@id/medicationFragment" />
+        <action
+            android:id="@+id/action_participantDetailsFragment_to_medicalHistoryFragment"
+            app:destination="@id/medicalHistoryFragment" />
+        <action
+            android:id="@+id/action_participantDetailsFragment_to_participantHelthInfoFragment"
+            app:destination="@id/participantHelthInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/medicalHistoryFragment"
+        android:name="com.anuraagpotdaar.unitrials.MedicalHistoryFragment"
+        android:label="fragment_medical_history"
+        tools:layout="@layout/fragment_medical_history" />
+    <fragment
+        android:id="@+id/participantHelthInfoFragment"
+        android:name="com.anuraagpotdaar.unitrials.ParticipantHelthInfoFragment"
+        android:label="fragment_participant_helth_info"
+        tools:layout="@layout/fragment_participant_helth_info" />
+</navigation>

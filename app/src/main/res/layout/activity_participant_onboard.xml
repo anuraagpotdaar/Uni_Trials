@@ -3,41 +3,39 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/SoftBackground"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".ParticipantOnboardActivity">
 
+    <TextView
+        android:id="@+id/txt_btn_cancel"
+        style="@style/Subheading"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="46dp"
+        android:text="Cancel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/txt_btn_done"
+        style="@style/Subheading"
+        android:layout_marginTop="46dp"
+        android:layout_marginEnd="19dp"
+        android:text="Done"
+        android:textColor="@color/Purple"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/txt_btn_cancel"
-            style="@style/Subheading"
-            android:layout_marginStart="19dp"
-            android:layout_marginTop="46dp"
-            android:text="Cancel"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/txt_btn_done"
-            style="@style/Subheading"
-            android:layout_marginTop="46dp"
-            android:layout_marginEnd="19dp"
-            android:text="Done"
-            android:textColor="@color/Purple"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/lb_heading"
-            style="@style/Heading"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="10dp"
-            android:text="Add patient"
-            android:textColor="@color/Purple"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txt_btn_cancel" />
+    <TextView
+        android:id="@+id/lb_heading"
+        style="@style/Heading"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:text="Add patient"
+        android:textColor="@color/Purple"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_btn_cancel" />
 
     <TextView
         android:id="@+id/lb_subheading"
@@ -47,7 +45,6 @@
         android:textColor="@color/Gray"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lb_heading" />
-
 
 
     <TextView
@@ -92,9 +89,9 @@
     <TextView
         android:id="@+id/lb_email"
         style="@style/Body.main"
-        android:text="Email"
         android:layout_marginStart="16dp"
         android:layout_marginTop="7dp"
+        android:text="Email"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_phone_number" />
 
@@ -134,7 +131,7 @@
         android:layout_marginTop="7dp"
         android:text="Date Of Birth"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_address"/>
+        app:layout_constraintTop_toBottomOf="@+id/text_address" />
 
     <EditText
         android:id="@+id/text_dob"
