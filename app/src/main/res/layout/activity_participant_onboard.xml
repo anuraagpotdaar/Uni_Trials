@@ -48,141 +48,106 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lb_heading" />
 
-
-
-    <TextView
-        android:id="@+id/lb_name"
-        style="@style/Body.main"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
-        android:text="Name"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lb_subheading" />
-
-    <EditText
-        android:id="@+id/text_name"
-        style="@style/MyEditText"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="16dp"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lb_name" />
+        app:layout_constraintTop_toBottomOf="@+id/lb_subheading">
 
-    <TextView
-        android:id="@+id/lb_phone_number"
-        style="@style/Body.main"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="7dp"
-        android:text="Phone Number"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_name" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="16dp"
+            android:orientation="vertical"
+            >
 
-    <EditText
-        android:id="@+id/text_phone_number"
-        style="@style/MyEditText"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="16dp"
-        android:inputType="number"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lb_phone_number" />
+            <TextView
+                android:id="@+id/lb_name"
+                style="@style/Body.main"
+                android:text="Name"/>
 
-    <TextView
-        android:id="@+id/lb_email"
-        style="@style/Body.main"
-        android:text="Email"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="7dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_phone_number" />
+            <EditText
+                android:id="@+id/text_name"
+                style="@style/MyEditText"
+                android:layout_width="match_parent"
+                android:layout_marginTop="0dp"/>
 
-    <EditText
-        android:id="@+id/text_email"
-        style="@style/MyEditText"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lb_email" />
+            <TextView
+                android:id="@+id/lb_phone_number"
+                style="@style/Body.main"
+                android:text="Phone Number"
+                android:layout_marginTop="5dp"/>
 
-    <TextView
-        android:id="@+id/lb_address"
-        style="@style/Body.main"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="7dp"
-        android:text="Address"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_email" />
+            <EditText
+                android:id="@+id/text_phone_number"
+                style="@style/MyEditText"
+                android:layout_width="match_parent"
+                android:layout_marginTop="0dp"/>
 
-    <EditText
-        android:id="@+id/text_address"
-        style="@style/MyEditText"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lb_address" />
+            <TextView
+                android:id="@+id/lb_email"
+                style="@style/Body.main"
+                android:text="Email"
+                android:layout_marginTop="5dp" />
 
-    <TextView
-        android:id="@+id/lb_dob"
-        style="@style/Body.main"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="7dp"
-        android:text="Date Of Birth"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_address"/>
+            <EditText
+                android:id="@+id/text_email"
+                style="@style/MyEditText"
+                android:layout_width="match_parent"
+                android:layout_marginTop="0dp"/>
 
-    <EditText
-        android:id="@+id/text_dob"
-        style="@style/MyEditText"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lb_dob" />
+            <TextView
+                android:id="@+id/lb_address"
+                style="@style/Body.main"
+                android:text="Address"
+                android:layout_marginTop="5dp" />
+
+            <EditText
+                android:id="@+id/text_address"
+                style="@style/MyEditText"
+                android:layout_width="match_parent"
+                android:layout_marginTop="0dp" />
+
+            <TextView
+                android:id="@+id/lb_dob"
+                style="@style/Body.main"
+                android:text="Date Of Birth"
+                android:layout_marginTop="5dp"/>
+
+            <EditText
+                android:id="@+id/text_dob"
+                style="@style/MyEditText"
+                android:layout_width="match_parent"
+                android:layout_marginTop="0dp" />
 
 
-    <!--    drop down to be implemented-->
-    <TextView
-        android:id="@+id/lb_gender"
-        style="@style/Body.main"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="7dp"
-        android:text="Gender"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_dob" />
+            <TextView
+                android:id="@+id/lb_gender"
+                style="@style/Body.main"
+                android:text="Gender"
+                android:layout_marginTop="5dp"/>
 
-    <EditText
-        android:id="@+id/text_gender"
-        style="@style/MyEditText"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lb_gender" />
+            <EditText
+                android:id="@+id/text_gender"
+                style="@style/MyEditText"
+                android:layout_width="match_parent"
+                android:layout_marginTop="0dp"/>
 
-    <TextView
-        android:id="@+id/lb_medical_history"
-        style="@style/Body.main"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="7dp"
-        android:text="Medical History"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_gender" />
+            <TextView
+                android:id="@+id/lb_medical_history"
+                style="@style/Body.main"
+                android:text="Medical History"
+                android:layout_marginTop="5dp" />
 
-    <EditText
-        android:id="@+id/text_medical_history"
-        style="@style/MyEditText"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lb_medical_history" />
+            <EditText
+                android:id="@+id/text_medical_history"
+                style="@style/MyEditText"
+                android:layout_height="150dp"
+                android:layout_width="match_parent"
+                android:layout_marginTop="0dp"/>
+
+
+        </LinearLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
