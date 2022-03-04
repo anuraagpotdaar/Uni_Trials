@@ -14,7 +14,7 @@
             android:exported="false" />
         <activity
             android:name=".ParticipantDataManagementActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".SplashScreen"
             android:exported="true">

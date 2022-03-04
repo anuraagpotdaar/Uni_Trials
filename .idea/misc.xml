@@ -7,15 +7,24 @@
         <entry key="..\:/AndroidStudioProjects/UniTrials/app/src/main/res/drawable/bg_et.xml" value="0.242" />
         <entry key="..\:/AndroidStudioProjects/UniTrials/app/src/main/res/drawable/color_cursor.xml" value="0.242" />
         <entry key="..\:/AndroidStudioProjects/UniTrials/app/src/main/res/drawable/ic_all_ok.xml" value="0.1995" />
+        <entry key="..\:/AndroidStudioProjects/UniTrials/app/src/main/res/drawable/ic_delete.xml" value="0.1995" />
+        <entry key="..\:/AndroidStudioProjects/UniTrials/app/src/main/res/drawable/ic_healthcare.xml" value="0.1995" />
         <entry key="..\:/AndroidStudioProjects/UniTrials/app/src/main/res/drawable/ic_settings.xml" value="0.1995" />
         <entry key="..\:/AndroidStudioProjects/UniTrials/app/src/main/res/drawable/layout_participants.xml" value="0.1995" />
         <entry key="..\:/AndroidStudioProjects/UniTrials/app/src/main/res/font/roboto_bold.xml" value="0.3927083333333333" />
         <entry key="..\:/AndroidStudioProjects/UniTrials/app/src/main/res/layout/activity_dashboard.xml" value="0.358695652173913" />
         <entry key="..\:/AndroidStudioProjects/UniTrials/app/src/main/res/layout/activity_login.xml" value="0.358695652173913" />
+        <entry key="..\:/AndroidStudioProjects/UniTrials/app/src/main/res/layout/activity_participant_data_management.xml" value="0.1762917933130699" />
         <entry key="..\:/AndroidStudioProjects/UniTrials/app/src/main/res/layout/activity_participant_management.xml" value="0.3625" />
         <entry key="..\:/AndroidStudioProjects/UniTrials/app/src/main/res/layout/activity_participant_onboard.xml" value="0.33" />
         <entry key="..\:/AndroidStudioProjects/UniTrials/app/src/main/res/layout/activity_participant_onboarding.xml" value="0.358695652173913" />
+        <entry key="..\:/AndroidStudioProjects/UniTrials/app/src/main/res/layout/activity_profile_and_settings.xml" value="0.3625" />
+        <entry key="..\:/AndroidStudioProjects/UniTrials/app/src/main/res/layout/fragment_add_medication.xml" value="0.3625" />
+        <entry key="..\:/AndroidStudioProjects/UniTrials/app/src/main/res/layout/fragment_medical_history.xml" value="0.1762917933130699" />
         <entry key="..\:/AndroidStudioProjects/UniTrials/app/src/main/res/layout/fragment_medication.xml" value="0.3625" />
+        <entry key="..\:/AndroidStudioProjects/UniTrials/app/src/main/res/layout/fragment_participant_details.xml" value="0.1762917933130699" />
+        <entry key="..\:/AndroidStudioProjects/UniTrials/app/src/main/res/layout/fragment_participant_helth_info.xml" value="0.1762917933130699" />
+        <entry key="..\:/AndroidStudioProjects/UniTrials/app/src/main/res/layout/layout_meds.xml" value="0.3625" />
         <entry key="..\:/AndroidStudioProjects/UniTrials/app/src/main/res/layout/layout_participants.xml" value="0.3625" />
       </map>
     </option>
