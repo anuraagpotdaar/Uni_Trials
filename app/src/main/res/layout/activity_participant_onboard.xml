@@ -3,41 +3,39 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/SoftBackground"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".ParticipantOnboardActivity">
 
+    <TextView
+        android:id="@+id/txt_btn_cancel"
+        style="@style/Subheading"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="46dp"
+        android:text="Cancel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/txt_btn_done"
+        style="@style/Subheading"
+        android:layout_marginTop="46dp"
+        android:layout_marginEnd="19dp"
+        android:text="Done"
+        android:textColor="@color/Purple"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/txt_btn_cancel"
-            style="@style/Subheading"
-            android:layout_marginStart="19dp"
-            android:layout_marginTop="46dp"
-            android:text="Cancel"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/txt_btn_done"
-            style="@style/Subheading"
-            android:layout_marginTop="46dp"
-            android:layout_marginEnd="19dp"
-            android:text="Done"
-            android:textColor="@color/Purple"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/lb_heading"
-            style="@style/Heading"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="10dp"
-            android:text="Add patient"
-            android:textColor="@color/Purple"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txt_btn_cancel" />
+    <TextView
+        android:id="@+id/lb_heading"
+        style="@style/Heading"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:text="Add patient"
+        android:textColor="@color/Purple"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_btn_cancel" />
 
     <TextView
         android:id="@+id/lb_subheading"
@@ -48,106 +46,140 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lb_heading" />
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+
+    <TextView
+        android:id="@+id/lb_name"
+        style="@style/Body.main"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:text="Name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lb_subheading" />
+
+    <EditText
+        android:id="@+id/text_name"
+        style="@style/MyEditText"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lb_subheading">
+        app:layout_constraintTop_toBottomOf="@+id/lb_name" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="16dp"
-            android:orientation="vertical"
-            >
+    <TextView
+        android:id="@+id/lb_phone_number"
+        style="@style/Body.main"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="7dp"
+        android:text="Phone Number"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_name" />
 
-            <TextView
-                android:id="@+id/lb_name"
-                style="@style/Body.main"
-                android:text="Name"/>
+    <EditText
+        android:id="@+id/text_phone_number"
+        style="@style/MyEditText"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="16dp"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lb_phone_number" />
 
-            <EditText
-                android:id="@+id/text_name"
-                style="@style/MyEditText"
-                android:layout_width="match_parent"
-                android:layout_marginTop="0dp"/>
+    <TextView
+        android:id="@+id/lb_email"
+        style="@style/Body.main"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="7dp"
+        android:text="Email"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_phone_number" />
 
-            <TextView
-                android:id="@+id/lb_phone_number"
-                style="@style/Body.main"
-                android:text="Phone Number"
-                android:layout_marginTop="5dp"/>
+    <EditText
+        android:id="@+id/text_email"
+        style="@style/MyEditText"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lb_email" />
 
-            <EditText
-                android:id="@+id/text_phone_number"
-                style="@style/MyEditText"
-                android:layout_width="match_parent"
-                android:layout_marginTop="0dp"/>
+    <TextView
+        android:id="@+id/lb_address"
+        style="@style/Body.main"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="7dp"
+        android:text="Address"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_email" />
 
-            <TextView
-                android:id="@+id/lb_email"
-                style="@style/Body.main"
-                android:text="Email"
-                android:layout_marginTop="5dp" />
+    <EditText
+        android:id="@+id/text_address"
+        style="@style/MyEditText"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lb_address" />
 
-            <EditText
-                android:id="@+id/text_email"
-                style="@style/MyEditText"
-                android:layout_width="match_parent"
-                android:layout_marginTop="0dp"/>
+    <TextView
+        android:id="@+id/lb_dob"
+        style="@style/Body.main"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="7dp"
+        android:text="Date Of Birth"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_address" />
 
-            <TextView
-                android:id="@+id/lb_address"
-                style="@style/Body.main"
-                android:text="Address"
-                android:layout_marginTop="5dp" />
-
-            <EditText
-                android:id="@+id/text_address"
-                style="@style/MyEditText"
-                android:layout_width="match_parent"
-                android:layout_marginTop="0dp" />
-
-            <TextView
-                android:id="@+id/lb_dob"
-                style="@style/Body.main"
-                android:text="Date Of Birth"
-                android:layout_marginTop="5dp"/>
-
-            <EditText
-                android:id="@+id/text_dob"
-                style="@style/MyEditText"
-                android:layout_width="match_parent"
-                android:layout_marginTop="0dp" />
-
-
-            <TextView
-                android:id="@+id/lb_gender"
-                style="@style/Body.main"
-                android:text="Gender"
-                android:layout_marginTop="5dp"/>
-
-            <EditText
-                android:id="@+id/text_gender"
-                style="@style/MyEditText"
-                android:layout_width="match_parent"
-                android:layout_marginTop="0dp"/>
-
-            <TextView
-                android:id="@+id/lb_medical_history"
-                style="@style/Body.main"
-                android:text="Medical History"
-                android:layout_marginTop="5dp" />
-
-            <EditText
-                android:id="@+id/text_medical_history"
-                style="@style/MyEditText"
-                android:layout_height="150dp"
-                android:layout_width="match_parent"
-                android:layout_marginTop="0dp"/>
+    <EditText
+        android:id="@+id/text_dob"
+        style="@style/MyEditText"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lb_dob" />
 
 
-        </LinearLayout>
-    </ScrollView>
+    <!--    drop down to be implemented-->
+    <TextView
+        android:id="@+id/lb_gender"
+        style="@style/Body.main"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="7dp"
+        android:text="Gender"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_dob" />
+
+    <EditText
+        android:id="@+id/text_gender"
+        style="@style/MyEditText"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lb_gender" />
+
+    <TextView
+        android:id="@+id/lb_medical_history"
+        style="@style/Body.main"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="7dp"
+        android:text="Medical History"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_gender" />
+
+    <EditText
+        android:id="@+id/text_medical_history"
+        style="@style/MyEditText"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lb_medical_history" />
 </androidx.constraintlayout.widget.ConstraintLayout>
