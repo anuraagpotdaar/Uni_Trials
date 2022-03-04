@@ -30,9 +30,10 @@ public class SplashScreen extends AppCompatActivity {
         //For Firebase Testing
         // Write a message to the database
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("message");
+        DatabaseReference myRef = database.getReference("Doctors");
 
-        myRef.setValue("Data gets uploaded successfully ");
+        myRef.child("Doctor ID").setValue("0124");
+        myRef.child("Doctor ID").child("0124").setValue("0123");
 
     }
 }
