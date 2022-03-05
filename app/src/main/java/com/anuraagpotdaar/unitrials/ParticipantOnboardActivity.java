@@ -41,7 +41,7 @@ public class ParticipantOnboardActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 rootNode = FirebaseDatabase.getInstance();
-                reference = rootNode.getReference("Doctors");
+                reference = rootNode.getReference("Patient List");
 
                 String name = edt_name.getEditableText().toString();
                 String phone = edt_phone.getEditableText().toString();
@@ -58,6 +58,7 @@ public class ParticipantOnboardActivity extends AppCompatActivity {
                 Toast.makeText(ParticipantOnboardActivity.this, "Patient added successfully", Toast.LENGTH_SHORT).show();
 
                 Intent intent = new Intent(getApplicationContext(),DashboardActivity.class);
+                startActivity(intent);
             }
         });
 
