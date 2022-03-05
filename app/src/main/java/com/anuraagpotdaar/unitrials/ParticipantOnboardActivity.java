@@ -2,10 +2,12 @@ package com.anuraagpotdaar.unitrials;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.anuraagpotdaar.unitrials.UserHelperClass.AddParticipant;
 import com.google.firebase.database.DatabaseReference;
@@ -52,6 +54,10 @@ public class ParticipantOnboardActivity extends AppCompatActivity {
 
                 AddParticipant addParticipant = new AddParticipant(name,phone,email,address,dob,medicalHistory,gender);
                 reference.child(phone).setValue(addParticipant);
+
+                Toast.makeText(ParticipantOnboardActivity.this, "Patient added successfully", Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent(getApplicationContext(),DashboardActivity.class);
             }
         });
 
