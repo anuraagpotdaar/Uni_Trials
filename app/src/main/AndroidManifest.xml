@@ -10,12 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.UniTrials">
         <activity
-            android:name=".ProfileAndSettings"
-            android:exported="false" />
-        <activity
-            android:name=".ParticipantDataManagementActivity"
-            android:exported="true" />
-        <activity
             android:name=".SplashScreen"
             android:exported="true">
             <intent-filter>
@@ -24,6 +18,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ProfileAndSettings"
+            android:exported="false" />
+        <activity
+            android:name=".ParticipantDataManagementActivity"
+            android:exported="true" />
         <activity
             android:name=".ParticipantOnboardActivity"
             android:exported="false" />
