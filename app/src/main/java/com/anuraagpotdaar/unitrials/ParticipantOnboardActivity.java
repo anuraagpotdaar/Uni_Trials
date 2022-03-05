@@ -59,6 +59,7 @@ public class ParticipantOnboardActivity extends AppCompatActivity {
 
                 Intent intent = new Intent(getApplicationContext(),DashboardActivity.class);
                 startActivity(intent);
+
             }
         });
 
