@@ -9,7 +9,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.anuraagpotdaar.unitrials.UserHelperClass.AddParticipant;
+import com.anuraagpotdaar.unitrials.HelperClasses.ParticipantModel;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -52,8 +52,8 @@ public class ParticipantOnboardActivity extends AppCompatActivity {
                 String gender = edt_gender.getEditableText().toString();
 
 
-                AddParticipant addParticipant = new AddParticipant(name,phone,email,address,dob,medicalHistory,gender);
-                reference.child(phone).setValue(addParticipant);
+                ParticipantModel participantModel = new ParticipantModel(name,phone,email,address,dob,medicalHistory,gender);
+                reference.child(phone).setValue(participantModel);
 
                 Toast.makeText(ParticipantOnboardActivity.this, "Patient added successfully", Toast.LENGTH_SHORT).show();
 

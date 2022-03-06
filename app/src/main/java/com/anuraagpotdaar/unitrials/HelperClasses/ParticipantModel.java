@@ -1,12 +1,13 @@
-package com.anuraagpotdaar.unitrials.UserHelperClass;
+package com.anuraagpotdaar.unitrials.HelperClasses;
 
-public class AddParticipant {
+public class ParticipantModel {
     String name,phone,email,address,gender,dob,medicalHistory;
+    boolean expanded;
 
-    public AddParticipant() {
+    public ParticipantModel() {
     }
 
-    public AddParticipant(String name, String phone, String email, String address, String gender, String dob, String medicalHistory) {
+    public ParticipantModel(String name, String phone, String email, String address, String gender, String dob, String medicalHistory) {
         this.name = name;
         this.phone = phone;
         this.email = email;
@@ -14,6 +15,15 @@ public class AddParticipant {
         this.gender = gender;
         this.dob = dob;
         this.medicalHistory = medicalHistory;
+        this.expanded=false;
+    }
+
+    public boolean isExpanded() {
+        return expanded;
+    }
+
+    public void setExpanded(boolean expanded) {
+        this.expanded = expanded;
     }
 
     public String getName() {

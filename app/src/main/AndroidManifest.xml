@@ -26,10 +26,10 @@
             android:exported="true" />
         <activity
             android:name=".ParticipantOnboardActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".DashboardActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".LoginActivity"
             android:exported="false" />
