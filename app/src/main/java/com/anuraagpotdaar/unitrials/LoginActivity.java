@@ -23,6 +23,7 @@ public class LoginActivity extends AppCompatActivity {
     EditText edt_username,edt_password;
     Button btn_login,btn_cancel;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,14 +65,20 @@ public class LoginActivity extends AppCompatActivity {
                 if (snapshot.exists()){
                     edt_username.setError(null);
                     String passwordFromDB = snapshot.child(userEnterdUsername).child("password").getValue(String.class).trim();
-//                    Log.e("User Entered Password",userEnteredPassword);
-//                    Log.e("pass", String.valueOf(passwordFromDB.equals(userEnteredPassword)));
+                    String nameFromDatabase = snapshot.child(userEnterdUsername).child("name").getValue(String.class).trim();
+                    String retentionRateFromDB = snapshot.child(userEnterdUsername).child("retension").getValue(String.class).trim();
 
+                    Log.e("User Entered Password",nameFromDatabase);
 
                     if (passwordFromDB.equals(userEnteredPassword)){
                         edt_password.setError(null);
                         Toast.makeText(LoginActivity.this, "Success", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(getApplicationContext(),DashboardActivity.class);
+
+                        intent.putExtra("Doctor_Name",nameFromDatabase);
+                        intent.putExtra("Retension_Rate",retentionRateFromDB);
+                        intent.putExtra("id",userEnterdUsername);
+
                         startActivity(intent);
                     }else {
                         edt_password.setError("Wrong Password");
