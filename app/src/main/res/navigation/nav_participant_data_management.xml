@@ -12,7 +12,7 @@
         tools:layout="@layout/fragment_medication" >
         <action
             android:id="@+id/action_add_medication"
-            app:destination="@id/addMedicationFragment" />
+            app:destination="@id/participantDetailsFragment" />
     </fragment>
     <fragment
         android:id="@+id/participantDetailsFragment"
