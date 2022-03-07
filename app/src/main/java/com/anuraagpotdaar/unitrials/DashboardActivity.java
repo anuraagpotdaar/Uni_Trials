@@ -7,11 +7,14 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 
 import com.anuraagpotdaar.unitrials.HelperClasses.DashPartiDispAdapter;
 import com.anuraagpotdaar.unitrials.HelperClasses.ParticipantModel;
 import com.anuraagpotdaar.unitrials.databinding.ActivityDashboardBinding;
+import com.google.android.material.button.MaterialButtonToggleGroup;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -29,6 +32,9 @@ public class DashboardActivity extends AppCompatActivity {
     DashPartiDispAdapter dashPartiDispAdapter;
     ArrayList<ParticipantModel> list;
 
+    ArrayList<ParticipantModel> searchList = new ArrayList<>();
+    ArrayList<ParticipantModel> priorityList = new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,8 +48,39 @@ public class DashboardActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         list= new ArrayList<>();
-        dashPartiDispAdapter = new DashPartiDispAdapter(this, list);
-        recyclerView.setAdapter(dashPartiDispAdapter);
+
+        binding.etParticipantSearch.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if (editable.toString().isEmpty()){
+                    if (binding.btnPriority.isChecked()) {
+                        loadPriorityData();
+                    }else if(binding.btnAll.isChecked()) {
+                        dashPartiDispAdapter = new DashPartiDispAdapter(getApplicationContext(), list);
+                        recyclerView.setAdapter(dashPartiDispAdapter);
+                        dashPartiDispAdapter.notifyDataSetChanged();
+                    }
+                } else {
+                    Search(editable.toString());
+                }
+            }
+        });
+
+        binding.toggleButton.addOnButtonCheckedListener((group, checkedId, isChecked) -> {
+            if (binding.btnPriority.isChecked()) {
+                loadPriorityData();
+            } else if(binding.btnAll.isChecked()) {
+                dashPartiDispAdapter = new DashPartiDispAdapter(getApplicationContext(), list);
+                recyclerView.setAdapter(dashPartiDispAdapter);
+                dashPartiDispAdapter.notifyDataSetChanged();
+            }
+        });
 
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -51,8 +88,8 @@ public class DashboardActivity extends AppCompatActivity {
                 for (DataSnapshot dataSnapshot: snapshot.getChildren()) {
                     ParticipantModel participantModel =dataSnapshot.getValue(ParticipantModel.class);
                     list.add(participantModel);
+                    loadPriorityData();
                 }
-                dashPartiDispAdapter.notifyDataSetChanged();
             }
 
             @Override
@@ -61,5 +98,25 @@ public class DashboardActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void loadPriorityData() {
+        priorityList.clear();
+        for(ParticipantModel currentList :list) {
+            if(currentList.getPriority() == 1 || currentList.getPriority() == 2) {
+                priorityList.add(currentList);
+            }
+        }
+        recyclerView.setAdapter(new DashPartiDispAdapter(this, priorityList));
+    }
+
+    private void Search(String searchText) {
+        searchList.clear();
+        for(ParticipantModel currentList :list) {
+            if(currentList.getName().toLowerCase().startsWith(searchText.toLowerCase())) {
+                searchList.add(currentList);
+            }
+        }
+        recyclerView.setAdapter(new DashPartiDispAdapter(this, searchList));
     }
 }

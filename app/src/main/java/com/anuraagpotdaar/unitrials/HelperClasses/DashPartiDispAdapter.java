@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -40,6 +41,13 @@ public class DashPartiDispAdapter extends RecyclerView.Adapter<DashPartiDispAdap
         ParticipantModel parti = list.get(position);
         holder.name.setText(parti.name);
         holder.ageGender.setText(parti.gender);
+        if (parti.priority == 1) {
+            holder.priority.setImageResource(R.drawable.ic_high);
+        } else if(parti.priority == 2) {
+            holder.priority.setImageResource(R.drawable.ic_medium);
+        } else if(parti.priority == 3) {
+            holder.priority.setImageResource(R.drawable.ic_all_ok);
+        }
 
         boolean isExpanded = list.get(position).isExpanded();
         holder.expandable.setVisibility(isExpanded ? View.VISIBLE :View.GONE);
@@ -53,6 +61,7 @@ public class DashPartiDispAdapter extends RecyclerView.Adapter<DashPartiDispAdap
     public class DpdViewHolder extends RecyclerView.ViewHolder {
 
         TextView name, ageGender, details , btnMore;
+        ImageView priority;
         ConstraintLayout expandable;
         CardView card;
         public DpdViewHolder(@NonNull View itemView) {
@@ -61,8 +70,10 @@ public class DashPartiDispAdapter extends RecyclerView.Adapter<DashPartiDispAdap
 
             name = itemView.findViewById(R.id.tvSearchParticipantName);
             ageGender = itemView.findViewById(R.id.tvSearchParticipantAgeGender);
+            priority = itemView.findViewById(R.id.ivSatusSeverity);
             details = itemView.findViewById(R.id.tvPartiHealthData);
             btnMore = itemView.findViewById(R.id.btnSeeDetails);
+
 
             expandable = itemView.findViewById(R.id.expandable);
 

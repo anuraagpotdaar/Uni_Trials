@@ -52,7 +52,7 @@ public class ParticipantOnboardActivity extends AppCompatActivity {
                 String gender = edt_gender.getEditableText().toString();
 
 
-                ParticipantModel participantModel = new ParticipantModel(name,phone,email,address,dob,medicalHistory,gender);
+                ParticipantModel participantModel = new ParticipantModel(name,phone,email,address,gender, dob,medicalHistory,3);
                 reference.child(phone).setValue(participantModel);
 
                 Toast.makeText(ParticipantOnboardActivity.this, "Patient added successfully", Toast.LENGTH_SHORT).show();

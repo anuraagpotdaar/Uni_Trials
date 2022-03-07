@@ -2,12 +2,13 @@ package com.anuraagpotdaar.unitrials.HelperClasses;
 
 public class ParticipantModel {
     String name,phone,email,address,gender,dob,medicalHistory;
+    int priority;
     boolean expanded;
 
     public ParticipantModel() {
     }
 
-    public ParticipantModel(String name, String phone, String email, String address, String gender, String dob, String medicalHistory) {
+    public ParticipantModel(String name, String phone, String email, String address, String gender, String dob, String medicalHistory, int priority) {
         this.name = name;
         this.phone = phone;
         this.email = email;
@@ -15,7 +16,16 @@ public class ParticipantModel {
         this.gender = gender;
         this.dob = dob;
         this.medicalHistory = medicalHistory;
+        this.priority = priority;
         this.expanded=false;
+    }
+
+    public int getPriority() {
+        return priority;
+    }
+
+    public void setPriority(int priority) {
+        this.priority = priority;
     }
 
     public boolean isExpanded() {
