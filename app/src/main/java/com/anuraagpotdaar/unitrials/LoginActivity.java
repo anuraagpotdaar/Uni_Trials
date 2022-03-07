@@ -21,7 +21,7 @@ import com.google.firebase.database.ValueEventListener;
 public class LoginActivity extends AppCompatActivity {
 
     EditText edt_username,edt_password;
-    Button btn_login,btn_cancel;
+    Button btn_login;
 
 
     @Override
@@ -32,22 +32,8 @@ public class LoginActivity extends AppCompatActivity {
         edt_username = findViewById(R.id.etUsername);
         edt_password = findViewById(R.id.etPassword);
         btn_login = findViewById(R.id.btn_login);
-        btn_cancel =findViewById(R.id.btn_cancel);
 
-        btn_login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                isUser();
-            }
-        });
-
-        btn_cancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(),DashboardActivity.class);
-            }
-        });
-
+        btn_login.setOnClickListener(view -> isUser());
     }
 
     private void isUser() {
@@ -76,7 +62,7 @@ public class LoginActivity extends AppCompatActivity {
                         Intent intent = new Intent(getApplicationContext(),DashboardActivity.class);
 
                         intent.putExtra("Doctor_Name",nameFromDatabase);
-                        intent.putExtra("Retension_Rate",retentionRateFromDB);
+                        intent.putExtra("Retention_Rate",retentionRateFromDB);
                         intent.putExtra("id",userEnterdUsername);
 
                         startActivity(intent);

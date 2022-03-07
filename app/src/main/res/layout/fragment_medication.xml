@@ -8,29 +8,27 @@
     tools:context=".MedicationFragment">
 
     <TextView
-        android:id="@+id/btnMedCancel"
-        style="@style/Subheading"
+        android:id="@+id/txt_btn_cancel"
+        style="@style/SecNavBtn"
         android:text="Cancel"
-        android:layout_marginTop="25dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/btnAdd"
-        style="@style/Subheading"
-        android:layout_marginTop="25dp"
-        android:text="Add"
-        android:textColor="@color/Purple"
+        android:id="@+id/txt_btn_done"
+        style="@style/PrimeNavBtn"
+        android:text="Done"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/headingMed"
         style="@style/Heading"
+        android:layout_marginStart="30dp"
         android:text="Medications"
         android:textColor="@color/Purple"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnMedCancel" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_btn_cancel" />
 
     <TextView
         android:id="@+id/subHeadingMed"

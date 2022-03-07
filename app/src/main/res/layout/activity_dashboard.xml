@@ -9,17 +9,18 @@
 
     <ImageButton
         android:id="@+id/ibSettings"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="25dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="15dp"
         android:layout_marginEnd="30dp"
         android:adjustViewBounds="true"
         android:background="@android:color/transparent"
-        android:padding="5dp"
+        android:padding="15dp"
         android:scaleType="fitCenter"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_settings" />
+        app:srcCompat="@drawable/ic_settings"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/tvGreet"
@@ -90,17 +91,25 @@
             android:text="All" />
     </com.google.android.material.button.MaterialButtonToggleGroup>
 
+    <TextView
+        android:id="@+id/btnAddParti"
+        style="@style/SecondaryButton"
+        android:layout_marginStart="35dp"
+        android:text="Add new participant"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toggleButton" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvParticipantList"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="30dp"
         android:layout_marginBottom="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toggleButton" />
+        app:layout_constraintTop_toBottomOf="@+id/btnAddParti" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

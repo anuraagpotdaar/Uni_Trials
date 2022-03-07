@@ -23,6 +23,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class DashboardActivity extends AppCompatActivity {
 
@@ -43,8 +45,16 @@ public class DashboardActivity extends AppCompatActivity {
         View view = binding.getRoot();
         setContentView(view);
 
+        binding.tvDashboardUsername.setText(getIntent().getStringExtra("Doctor_Name"));
+        binding.tvParticipantCount.setText(String.format("%s participants are under your observation", getIntent().getStringExtra("Retention_Rate")));
+
         binding.ibSettings.setOnClickListener(view1 -> {
             Intent intent = new Intent(getApplicationContext(),ProfileAndSettings.class);
+            startActivity(intent);
+        });
+
+        binding.btnAddParti.setOnClickListener(view1 -> {
+            Intent intent = new Intent(getApplicationContext(),ParticipantOnboardActivity.class);
             startActivity(intent);
         });
 
@@ -113,6 +123,9 @@ public class DashboardActivity extends AppCompatActivity {
                 priorityList.add(currentList);
             }
         }
+
+        priorityList.sort(Comparator.comparingInt(ParticipantModel::getPriority));
+
         recyclerView.setAdapter(new DashPartiDispAdapter(this, priorityList));
     }
 

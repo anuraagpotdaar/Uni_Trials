@@ -3,46 +3,39 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/SoftBackground"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".ParticipantOnboardActivity">
 
+    <TextView
+        android:id="@+id/txt_btn_cancel"
+        style="@style/SecNavBtn"
+        android:text="Cancel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/txt_btn_done"
+        style="@style/PrimeNavBtn"
+        android:text="Done"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/txt_btn_cancel"
-            style="@style/Subheading"
-            android:layout_marginStart="19dp"
-            android:layout_marginTop="46dp"
-            android:text="Cancel"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/txt_btn_done"
-            style="@style/Subheading"
-            android:layout_marginTop="46dp"
-            android:layout_marginEnd="19dp"
-            android:text="Done"
-            android:textColor="@color/Purple"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/lb_heading"
-            style="@style/Heading"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="10dp"
-            android:text="Add patient"
-            android:textColor="@color/Purple"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txt_btn_cancel" />
+    <TextView
+        android:id="@+id/lb_heading"
+        style="@style/Heading"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="25dp"
+        android:text="Add patient"
+        android:textColor="@color/Purple"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_btn_cancel" />
 
     <TextView
         android:id="@+id/lb_subheading"
         style="@style/Subheading"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="30dp"
         android:text="Fill the following details to add patient"
         android:textColor="@color/Gray"
         app:layout_constraintStart_toStartOf="parent"
@@ -50,7 +43,11 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lb_subheading">
@@ -59,49 +56,48 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="16dp"
-            android:orientation="vertical"
-            >
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/lb_name"
                 style="@style/Body.main"
-                android:text="Name"/>
+                android:text="Name" />
 
             <EditText
                 android:id="@+id/text_name"
                 style="@style/MyEditText"
                 android:layout_width="match_parent"
-                android:layout_marginTop="0dp"/>
+                android:layout_marginTop="0dp" />
 
             <TextView
                 android:id="@+id/lb_phone_number"
                 style="@style/Body.main"
-                android:text="Phone Number"
-                android:layout_marginTop="5dp"/>
+                android:layout_marginTop="5dp"
+                android:text="Phone Number" />
 
             <EditText
                 android:id="@+id/text_phone_number"
                 style="@style/MyEditText"
                 android:layout_width="match_parent"
-                android:layout_marginTop="0dp"/>
+                android:layout_marginTop="0dp" />
 
             <TextView
                 android:id="@+id/lb_email"
                 style="@style/Body.main"
-                android:text="Email"
-                android:layout_marginTop="5dp" />
+                android:layout_marginTop="5dp"
+                android:text="Email" />
 
             <EditText
                 android:id="@+id/text_email"
                 style="@style/MyEditText"
                 android:layout_width="match_parent"
-                android:layout_marginTop="0dp"/>
+                android:layout_marginTop="0dp" />
 
             <TextView
                 android:id="@+id/lb_address"
                 style="@style/Body.main"
-                android:text="Address"
-                android:layout_marginTop="5dp" />
+                android:layout_marginTop="5dp"
+                android:text="Address" />
 
             <EditText
                 android:id="@+id/text_address"
@@ -112,8 +108,8 @@
             <TextView
                 android:id="@+id/lb_dob"
                 style="@style/Body.main"
-                android:text="Date Of Birth"
-                android:layout_marginTop="5dp"/>
+                android:layout_marginTop="5dp"
+                android:text="Date Of Birth" />
 
             <EditText
                 android:id="@+id/text_dob"
@@ -125,30 +121,31 @@
             <TextView
                 android:id="@+id/lb_gender"
                 style="@style/Body.main"
-                android:text="Gender"
-                android:layout_marginTop="5dp"/>
+                android:layout_marginTop="5dp"
+                android:text="Gender" />
 
             <EditText
                 android:id="@+id/text_gender"
                 style="@style/MyEditText"
                 android:layout_width="match_parent"
-                android:layout_marginTop="0dp"/>
+                android:layout_marginTop="0dp" />
 
             <TextView
                 android:id="@+id/lb_medical_history"
                 style="@style/Body.main"
-                android:text="Medical History"
-                android:layout_marginTop="5dp" />
+                android:layout_marginTop="5dp"
+                android:text="Medical History" />
 
             <EditText
                 android:id="@+id/text_medical_history"
                 style="@style/MyEditText"
-                android:layout_height="150dp"
                 android:layout_width="match_parent"
+                android:layout_height="150dp"
                 android:layout_marginTop="0dp"
-                android:singleLine="false"/>
-
-
+                android:gravity="top"
+                android:inputType="textMultiLine"
+                android:maxLines="5"
+                android:singleLine="false" />
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
