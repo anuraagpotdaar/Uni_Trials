@@ -7,6 +7,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 
 import com.anuraagpotdaar.unitrials.HelperClasses.DashPartiDispAdapter;
@@ -29,6 +31,8 @@ public class DashboardActivity extends AppCompatActivity {
     DashPartiDispAdapter dashPartiDispAdapter;
     ArrayList<ParticipantModel> list;
 
+    ArrayList<ParticipantModel> searchList = new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +48,25 @@ public class DashboardActivity extends AppCompatActivity {
         list= new ArrayList<>();
         dashPartiDispAdapter = new DashPartiDispAdapter(this, list);
         recyclerView.setAdapter(dashPartiDispAdapter);
+
+        binding.etParticipantSearch.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                searchList.clear();
+                if (editable.toString().isEmpty()){
+                    recyclerView.setAdapter(dashPartiDispAdapter);
+                    dashPartiDispAdapter.notifyDataSetChanged();
+                } else {
+                    Search(editable.toString());
+                }
+            }
+        });
 
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -61,5 +84,15 @@ public class DashboardActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void Search(String searchText) {
+        for(ParticipantModel currentList :list) {
+            if(currentList.getName().startsWith(searchText)) {
+                searchList.add(currentList);
+            }
+        }
+        recyclerView.setAdapter(new DashPartiDispAdapter(this, searchList));
+        dashPartiDispAdapter.notifyDataSetChanged();
     }
 }
