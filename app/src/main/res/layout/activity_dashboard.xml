@@ -54,6 +54,7 @@
         style="@style/MyEditText"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
+        android:hint="Enter name to search participants"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvParticipantCount" />
