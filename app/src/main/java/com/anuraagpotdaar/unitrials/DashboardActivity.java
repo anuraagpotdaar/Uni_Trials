@@ -6,6 +6,7 @@ import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -41,6 +42,11 @@ public class DashboardActivity extends AppCompatActivity {
         binding = ActivityDashboardBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
+
+        binding.ibSettings.setOnClickListener(view1 -> {
+            Intent intent = new Intent(getApplicationContext(),ProfileAndSettings.class);
+            startActivity(intent);
+        });
 
         recyclerView = binding.rvParticipantList;
         databaseReference = FirebaseDatabase.getInstance().getReference("Patient List");

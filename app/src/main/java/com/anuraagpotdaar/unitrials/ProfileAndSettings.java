@@ -29,22 +29,13 @@ public class ProfileAndSettings extends AppCompatActivity {
         btn_back = findViewById(R.id.txt_btn_back);
         btn_logOut = findViewById(R.id.btn_logout);
 
-
-
-        btn_back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(),DashboardActivity.class);
-                startActivity(intent);
-            }
+        btn_back.setOnClickListener(view -> {
+            finish();
         });
 
-        btn_logOut.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(),LoginActivity.class);
-                startActivity(intent);
-            }
+        btn_logOut.setOnClickListener(view -> {
+            Intent intent = new Intent(getApplicationContext(),LoginActivity.class);
+            startActivity(intent);
         });
     }
 }

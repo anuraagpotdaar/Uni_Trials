@@ -41,12 +41,16 @@ public class DashPartiDispAdapter extends RecyclerView.Adapter<DashPartiDispAdap
         ParticipantModel parti = list.get(position);
         holder.name.setText(parti.name);
         holder.ageGender.setText(parti.gender);
-        if (parti.priority == 1) {
-            holder.priority.setImageResource(R.drawable.ic_high);
-        } else if(parti.priority == 2) {
-            holder.priority.setImageResource(R.drawable.ic_medium);
-        } else if(parti.priority == 3) {
-            holder.priority.setImageResource(R.drawable.ic_all_ok);
+        switch (parti.priority) {
+            case 1:
+                holder.priority.setImageResource(R.drawable.ic_high);
+                break;
+            case 2:
+                holder.priority.setImageResource(R.drawable.ic_medium);
+                break;
+            case 3:
+                holder.priority.setImageResource(R.drawable.ic_all_ok);
+                break;
         }
 
         boolean isExpanded = list.get(position).isExpanded();
