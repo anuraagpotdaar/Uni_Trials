@@ -5,9 +5,6 @@ public class ParticipantModel {
     int priority;
     boolean expanded;
 
-    public ParticipantModel() {
-    }
-
     public ParticipantModel(String name, String phone, String email, String address, String gender, String dob, String medicalHistory, int priority) {
         this.name = name;
         this.phone = phone;

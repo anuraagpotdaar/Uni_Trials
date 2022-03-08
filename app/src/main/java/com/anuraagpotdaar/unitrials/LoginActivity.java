@@ -33,7 +33,9 @@ public class LoginActivity extends AppCompatActivity {
         edt_password = findViewById(R.id.etPassword);
         btn_login = findViewById(R.id.btn_login);
 
-        btn_login.setOnClickListener(view -> isUser());
+        btn_login.setOnClickListener(view -> {
+            isUser();
+        });
     }
 
     private void isUser() {
