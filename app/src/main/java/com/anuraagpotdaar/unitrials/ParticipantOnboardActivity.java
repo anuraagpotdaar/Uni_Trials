@@ -19,6 +19,7 @@ public class ParticipantOnboardActivity extends AppCompatActivity {
     DatabaseReference reference;
     EditText edt_name,edt_phone,edt_email,edt_address,edt_dob,edt_medicalHistory,edt_gender;
     TextView btn_cancel,btn_done;
+    int count=0;
 
 
     @Override
@@ -51,7 +52,7 @@ public class ParticipantOnboardActivity extends AppCompatActivity {
                 String medicalHistory = edt_medicalHistory.getEditableText().toString();
                 String gender = edt_gender.getEditableText().toString();
 
-
+                count = count+1;
                 ParticipantModel participantModel = new ParticipantModel(name,phone,email,address,gender, dob,medicalHistory,3);
                 reference.child(phone).setValue(participantModel);
 

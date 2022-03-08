@@ -18,8 +18,6 @@ public class ProfileAndSettings extends AppCompatActivity {
 
     TextView btn_back;
     Button btn_logOut;
-    DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Doctors");
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +26,7 @@ public class ProfileAndSettings extends AppCompatActivity {
 
         btn_back = findViewById(R.id.btnSettingsBack);
         btn_logOut = findViewById(R.id.btn_logout);
+
 
         btn_back.setOnClickListener(view -> {
             finish();
