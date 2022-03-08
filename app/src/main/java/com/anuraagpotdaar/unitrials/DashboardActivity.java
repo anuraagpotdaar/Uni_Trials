@@ -131,11 +131,20 @@ public class DashboardActivity extends AppCompatActivity {
 
     private void Search(String searchText) {
         searchList.clear();
-        for(ParticipantModel currentList :list) {
-            if(currentList.getName().toLowerCase().startsWith(searchText.toLowerCase())) {
-                searchList.add(currentList);
+        if (binding.btnPriority.isChecked()) {
+            for(ParticipantModel currentList :priorityList) {
+                if(currentList.getName().toLowerCase().startsWith(searchText.toLowerCase())) {
+                    searchList.add(currentList);
+                }
+            }
+        } else if(binding.btnAll.isChecked()) {
+            for(ParticipantModel currentList :list) {
+                if(currentList.getName().toLowerCase().startsWith(searchText.toLowerCase())) {
+                    searchList.add(currentList);
+                }
             }
         }
+
         recyclerView.setAdapter(new DashPartiDispAdapter(this, searchList));
     }
 }

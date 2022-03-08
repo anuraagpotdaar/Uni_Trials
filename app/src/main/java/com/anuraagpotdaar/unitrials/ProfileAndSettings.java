@@ -26,7 +26,7 @@ public class ProfileAndSettings extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_and_settings);
 
-        btn_back = findViewById(R.id.txt_btn_back);
+        btn_back = findViewById(R.id.btnSettingsBack);
         btn_logOut = findViewById(R.id.btn_logout);
 
         btn_back.setOnClickListener(view -> {

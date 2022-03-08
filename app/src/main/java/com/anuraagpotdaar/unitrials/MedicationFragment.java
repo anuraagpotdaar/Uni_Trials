@@ -21,7 +21,7 @@ public class MedicationFragment extends Fragment {
                              Bundle savedInstanceState) {
         binding = FragmentMedicationBinding.inflate(inflater, container, false);
 
-        binding.btnAdd.setOnClickListener(
+        binding.btnAddMeds.setOnClickListener(
                 view -> {
                     Navigation.findNavController(view).navigate(R.id.action_add_medication);
                 });
