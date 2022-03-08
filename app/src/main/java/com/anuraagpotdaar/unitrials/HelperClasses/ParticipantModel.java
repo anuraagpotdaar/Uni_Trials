@@ -6,6 +6,7 @@ public class ParticipantModel {
     boolean expanded;
 
     public ParticipantModel() {
+
     }
 
     public ParticipantModel(String name, String phone, String email, String address, String gender, String dob, String medicalHistory, int priority) {
