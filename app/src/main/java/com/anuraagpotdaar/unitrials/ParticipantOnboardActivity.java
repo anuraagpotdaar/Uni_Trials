@@ -63,9 +63,5 @@ public class ParticipantOnboardActivity extends AppCompatActivity {
 
             }
         });
-
-
-
-
     }
 }

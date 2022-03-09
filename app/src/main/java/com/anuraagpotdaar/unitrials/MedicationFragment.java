@@ -23,7 +23,7 @@ public class MedicationFragment extends Fragment {
 
         binding.btnAddMeds.setOnClickListener(
                 view -> {
-                    Navigation.findNavController(view).navigate(R.id.action_add_medication);
+                    Navigation.findNavController(view).navigate(R.id.action_add_meds);
                 });
         return binding.getRoot();
     }

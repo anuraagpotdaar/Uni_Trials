@@ -24,6 +24,8 @@ public class DashPartiDispAdapter extends RecyclerView.Adapter<DashPartiDispAdap
 
     ArrayList<ParticipantModel> list;
 
+    String phone;
+
     public DashPartiDispAdapter(Context context, ArrayList<ParticipantModel> list) {
         this.context = context;
         this.list = list;
@@ -41,6 +43,7 @@ public class DashPartiDispAdapter extends RecyclerView.Adapter<DashPartiDispAdap
         ParticipantModel parti = list.get(position);
         holder.name.setText(parti.name);
         holder.ageGender.setText(parti.gender);
+        phone = parti.phone;
         switch (parti.priority) {
             case 1:
                 holder.priority.setImageResource(R.drawable.ic_high);
@@ -89,7 +92,8 @@ public class DashPartiDispAdapter extends RecyclerView.Adapter<DashPartiDispAdap
 
             btnMore.setOnClickListener(view -> {
                 Intent myIntent = new Intent(context, ParticipantDataManagementActivity.class);
-                myIntent.putExtra(Intent.EXTRA_TEXT, name.getText().toString());
+                myIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                myIntent.putExtra("selected participant", phone);
                 context.startActivity(myIntent);
             });
         }

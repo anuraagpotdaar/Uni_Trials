@@ -11,8 +11,8 @@
         android:label="fragment_medication"
         tools:layout="@layout/fragment_medication" >
         <action
-            android:id="@+id/action_add_medication"
-            app:destination="@id/participantDetailsFragment" />
+            android:id="@+id/action_add_meds"
+            app:destination="@id/addMedicationFragment" />
     </fragment>
     <fragment
         android:id="@+id/participantDetailsFragment"
@@ -23,7 +23,7 @@
             android:id="@+id/action_participantDetailsFragment_to_medicationFragment"
             app:destination="@id/medicationFragment" />
         <action
-            android:id="@+id/action_participantDetailsFragment_to_medicalHistoryFragment"
+            android:id="@+id/action_open_medicalHistory"
             app:destination="@id/medicalHistoryFragment" />
         <action
             android:id="@+id/action_participantDetailsFragment_to_participantHelthInfoFragment"
