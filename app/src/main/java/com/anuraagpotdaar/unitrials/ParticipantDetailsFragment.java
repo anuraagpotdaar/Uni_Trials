@@ -27,6 +27,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.Calendar;
+import java.util.Date;
+
 public class ParticipantDetailsFragment extends Fragment {
 
     private FragmentParticipantDetailsBinding binding;
@@ -53,7 +56,10 @@ public class ParticipantDetailsFragment extends Fragment {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 binding.tvPartiName.setText(snapshot.child("name").getValue(String.class));
 
-                String quickInfo = snapshot.child("age").getValue(String.class) + " years old " + snapshot.child("gender").getValue(String.class);
+                String dob =  snapshot.child("dob").getValue(String.class);
+                int age = Calendar.getInstance().get(Calendar.YEAR) - Integer.parseInt(dob.substring(dob.length() - 4));
+
+                String quickInfo = age + " years old " + snapshot.child("gender").getValue(String.class);
                 binding.tvPartiQuickInfo.setText(quickInfo);
 
                 Integer priority = snapshot.child("priority").getValue(Integer.class);
@@ -109,7 +115,7 @@ public class ParticipantDetailsFragment extends Fragment {
         return view;
     }
 
-    private ActivityResultLauncher<String> requestPermissionLauncher =
+    private final ActivityResultLauncher<String> requestPermissionLauncher =
             registerForActivityResult(new ActivityResultContracts.RequestPermission(), isGranted -> {
                 if (isGranted) {
                     // Permission is granted. Continue the action or workflow in your

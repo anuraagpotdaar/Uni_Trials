@@ -1,14 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MedicalHistoryFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/btnHistoryBack"
+        style="@style/SecNavBtn"
+        android:text="Back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvHeadingHistory"
+        style="@style/Heading"
+        android:text="Medical history"
+        android:textColor="@color/Purple"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnHistoryBack" />
+
+    <TextView
+        android:id="@+id/tvSubHeadingHistory"
+        style="@style/Subheading"
+        tools:text="of 26 years old john Doe"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvHeadingHistory" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvSubHeadingHistory">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvHistoryContents"
+                style="@style/Body.child"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginBottom="30dp"
+                android:justificationMode="inter_word"
+                tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pharetra arcu nec nibh mattis, in egestas sem fermentum. Duis scelerisque nisi felis, efficitur ultricies ante congue quis. Nam ac eros nisl. Etiam ut scelerisque turpis. Proin vel venenatis lorem. Aliquam molestie nisl id interdum efficitur. Phasellus id libero scelerisque diam egestas mattis. Etiam sed pulvinar neque. Morbi ut nisl diam. Proin tempor orci facilisis diam tempus, eget interdum dolor molestie. Fusce odio dolor, convallis placerat posuere eget, finibus sed odio. Ut ac efficitur eros, id tincidunt arcu.
+
+Morbi sed ipsum sit amet orci congue faucibus eu a massa. Vivamus euismod ac libero nec aliquet. Curabitur ante ipsum, laoreet rutrum eleifend ac, consectetur a ipsum. Sed dapibus rutrum libero, non accumsan diam condimentum ut. Donec egestas sem eu libero tristique convallis. Suspendisse mattis nibh eu metus mattis placerat. Duis aliquam accumsan libero sed ullamcorper. Proin ac ex id odio lacinia rutrum.
+
+Mauris tempor, ex vitae faucibus mollis, dui metus molestie enim, sed efficitur purus lacus ut neque. Morbi in ullamcorper eros. Ut sagittis pellentesque eros vel pretium. Donec ex risus, porttitor ut vehicula sed, imperdiet quis mauris. Donec in eros mauris. Vivamus euismod massa sit amet sem consectetur, in molestie arcu tincidunt. Maecenas tempus mollis urna et dictum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed gravida, purus ac posuere fermentum, mauris enim dignissim dolor, eu sodales risus massa in elit. Sed tincidunt varius sodales.
+
+Integer eget est nec neque congue ultrices eget a sem. Donec dignissim sem vitae neque convallis, nec volutpat neque placerat. Aenean mi lectus, malesuada auctor tincidunt nec, maximus vitae lorem. Vestibulum felis dolor, placerat sit amet nisl at, luctus placerat dolor. Nulla consequat ultrices nisl a sagittis. Ut et egestas lorem. Aliquam at fermentum est, quis convallis justo. Nulla porttitor ut nisi vel vestibulum. Phasellus imperdiet odio vitae sollicitudin volutpat. Sed semper est metus, sed hendrerit sem bibendum viverra. Vivamus varius dictum aliquet. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla in iaculis quam, et sollicitudin justo. Nam in nulla at est venenatis pellentesque. Maecenas consectetur eget purus nec faucibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+Vivamus iaculis vulputate sem. Ut a leo tellus. Nulla fringilla maximus placerat. Ut ut ultricies magna, nec malesuada diam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur porta luctus tellus a dapibus. Vestibulum magna augue, consequat vitae nibh nec, faucibus imperdiet quam. Morbi vestibulum augue nisl, id facilisis eros fringilla quis. In pharetra, purus at suscipit lobortis, nisl neque tempor augue, non cursus ex ante sit amet lacus." />
+        </FrameLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

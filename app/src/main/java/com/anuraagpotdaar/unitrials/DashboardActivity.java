@@ -23,6 +23,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collections;
 import java.util.Comparator;
 
@@ -46,7 +47,20 @@ public class DashboardActivity extends AppCompatActivity {
         setContentView(view);
 
         binding.tvDashboardUsername.setText(getIntent().getStringExtra("Doctor_Name"));
-        binding.tvParticipantCount.setText(String.format("%s participants are under your observation", getIntent().getStringExtra("Retention_Rate")));
+
+        DatabaseReference partiCount = FirebaseDatabase.getInstance().getReference("Doctors/"+getIntent().getStringExtra("id"));
+
+        partiCount.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                binding.tvParticipantCount.setText(String.format("%s participants are under your observation", snapshot.child("patients").getValue(int.class)));
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
         binding.ibSettings.setOnClickListener(view1 -> {
             Intent intent = new Intent(getApplicationContext(),ProfileAndSettings.class);
@@ -55,6 +69,8 @@ public class DashboardActivity extends AppCompatActivity {
 
         binding.btnAddParti.setOnClickListener(view1 -> {
             Intent intent = new Intent(getApplicationContext(),ParticipantOnboardActivity.class);
+            intent.putExtra("id",getIntent().getStringExtra("id"));
+            intent.putExtra("participants",getIntent().getStringExtra("patients"));
             startActivity(intent);
         });
 

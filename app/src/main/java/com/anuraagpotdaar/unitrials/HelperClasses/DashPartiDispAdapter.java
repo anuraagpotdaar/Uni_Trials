@@ -10,13 +10,21 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.anuraagpotdaar.unitrials.ParticipantDataManagementActivity;
 import com.anuraagpotdaar.unitrials.R;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import android.content.Context;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 public class DashPartiDispAdapter extends RecyclerView.Adapter<DashPartiDispAdapter.DpdViewHolder> {
 
@@ -58,6 +66,23 @@ public class DashPartiDispAdapter extends RecyclerView.Adapter<DashPartiDispAdap
 
         boolean isExpanded = list.get(position).isExpanded();
         holder.expandable.setVisibility(isExpanded ? View.VISIBLE :View.GONE);
+
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("Patient List/"+parti.phone);
+
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String currentHealthDetails = snapshot.child("heart").child("current").getValue(String.class) + " BPH\n" +
+                        snapshot.child("oxygen").child("current").getValue(String.class) + " %\n" +
+                        snapshot.child("bp").child("current").getValue(String.class) + " mm Hg\n";
+
+                holder.details.setText(currentHealthDetails);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 
     @Override
@@ -80,7 +105,6 @@ public class DashPartiDispAdapter extends RecyclerView.Adapter<DashPartiDispAdap
             priority = itemView.findViewById(R.id.ivSatusSeverity);
             details = itemView.findViewById(R.id.tvPartiHealthData);
             btnMore = itemView.findViewById(R.id.btnSeeDetails);
-
 
             expandable = itemView.findViewById(R.id.expandable);
 

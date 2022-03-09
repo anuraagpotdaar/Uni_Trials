@@ -1,6 +1,8 @@
 package com.anuraagpotdaar.unitrials;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.navigation.Navigation;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,8 +12,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.anuraagpotdaar.unitrials.HelperClasses.ParticipantModel;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.Calendar;
 
 public class ParticipantOnboardActivity extends AppCompatActivity {
 
@@ -19,13 +26,16 @@ public class ParticipantOnboardActivity extends AppCompatActivity {
     DatabaseReference reference;
     EditText edt_name,edt_phone,edt_email,edt_address,edt_dob,edt_medicalHistory,edt_gender;
     TextView btn_cancel,btn_done;
-    int count=0;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_participant_onboard);
+
+        String doctor = getIntent().getStringExtra("id");
+        int currentParti = Integer.parseInt(getIntent().getStringExtra("participants"));
+
+        DatabaseReference doctorsRef = FirebaseDatabase.getInstance().getReference("Doctors/"+ doctor);
 
         edt_name=findViewById(R.id.text_name);
         edt_phone=findViewById(R.id.text_phone_number);
@@ -38,30 +48,30 @@ public class ParticipantOnboardActivity extends AppCompatActivity {
         btn_cancel = findViewById(R.id.txt_btn_cancel);
         btn_done = findViewById(R.id.txt_btn_done);
 
-        btn_done.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                rootNode = FirebaseDatabase.getInstance();
-                reference = rootNode.getReference("Patient List");
+        btn_done.setOnClickListener(view -> {
+            rootNode = FirebaseDatabase.getInstance();
+            reference = rootNode.getReference("Patient List");
 
-                String name = edt_name.getEditableText().toString();
-                String phone = edt_phone.getEditableText().toString();
-                String email = edt_email.getEditableText().toString();
-                String address = edt_address.getEditableText().toString();
-                String dob = edt_dob.getEditableText().toString();
-                String medicalHistory = edt_medicalHistory.getEditableText().toString();
-                String gender = edt_gender.getEditableText().toString();
+            String name = edt_name.getEditableText().toString();
+            String phone = edt_phone.getEditableText().toString();
+            String email = edt_email.getEditableText().toString();
+            String address = edt_address.getEditableText().toString();
+            String dob = edt_dob.getEditableText().toString();
+            String medicalHistory = edt_medicalHistory.getEditableText().toString();
+            String gender = edt_gender.getEditableText().toString();
 
-                count = count+1;
-                ParticipantModel participantModel = new ParticipantModel(name,phone,email,address,gender, dob,medicalHistory,3);
-                reference.child(phone).setValue(participantModel);
+            ParticipantModel participantModel = new ParticipantModel(name,phone,email,address,gender, dob,medicalHistory,3);
+            reference.child(phone).setValue(participantModel);
 
-                Toast.makeText(ParticipantOnboardActivity.this, "Patient added successfully", Toast.LENGTH_SHORT).show();
+            Toast.makeText(ParticipantOnboardActivity.this, "Patient added successfully", Toast.LENGTH_SHORT).show();
 
-                Intent intent = new Intent(getApplicationContext(),DashboardActivity.class);
-                startActivity(intent);
+            int patientCount = currentParti +1;
+            doctorsRef.child("patients").setValue(patientCount);
 
-            }
+            Intent intent = new Intent(getApplicationContext(),DashboardActivity.class);
+            intent.putExtra("patients",patientCount);
+            startActivity(intent);
+            finish();
         });
     }
 }
