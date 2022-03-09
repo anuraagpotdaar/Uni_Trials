@@ -7,7 +7,7 @@
     tools:context=".ParticipantHelthInfoFragment">
 
     <TextView
-        android:id="@+id/btnBackPartiDetails"
+        android:id="@+id/textView4"
         style="@style/Body.main"
         android:layout_marginStart="30dp"
         android:layout_marginTop="30dp"
@@ -17,17 +17,17 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tvPartiName"
+        android:id="@+id/textView6"
         style="@style/Heading"
         android:layout_marginTop="50dp"
         android:text="Heart Rate"
         android:textColor="@color/Purple"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnBackPartiDetails" />
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <TextView
-        android:id="@+id/tvStatus"
+        android:id="@+id/textView7"
         style="@style/Body.main"
         android:layout_marginTop="10dp"
         android:text="John's Apple Watch SE"
@@ -35,17 +35,17 @@
         android:textSize="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvPartiName" />
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <ImageView
-        android:id="@+id/ivPartiPhoto"
+        android:id="@+id/imageView3"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginTop="30dp"
         android:src="@drawable/ic_doctor_profile"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvStatus" />
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
     <TextView
         style="@style/Heading"
@@ -54,7 +54,7 @@
         android:textSize="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivPartiPhoto" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

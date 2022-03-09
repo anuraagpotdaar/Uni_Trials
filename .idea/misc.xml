@@ -28,6 +28,7 @@
         <entry key="..\:/Users/91860/AndroidStudioProjects/Uni_Trials/app/src/main/res/drawable/bg_btn_primary_action.xml" value="0.13" />
         <entry key="..\:/Users/91860/AndroidStudioProjects/Uni_Trials/app/src/main/res/drawable/bg_et.xml" value="0.13" />
         <entry key="..\:/Users/91860/AndroidStudioProjects/Uni_Trials/app/src/main/res/drawable/color_cursor.xml" value="0.13" />
+        <entry key="..\:/Users/91860/AndroidStudioProjects/Uni_Trials/app/src/main/res/drawable/ic_delete.xml" value="0.1625" />
         <entry key="..\:/Users/91860/AndroidStudioProjects/Uni_Trials/app/src/main/res/drawable/ic_health_care_diet_svgrepo_com.xml" value="0.1625" />
         <entry key="..\:/Users/91860/AndroidStudioProjects/Uni_Trials/app/src/main/res/drawable/ic_launcher_background.xml" value="0.13" />
         <entry key="..\:/Users/91860/AndroidStudioProjects/Uni_Trials/app/src/main/res/layout/activity_dashboard.xml" value="0.22010869565217392" />
@@ -41,6 +42,7 @@
         <entry key="..\:/Users/91860/AndroidStudioProjects/Uni_Trials/app/src/main/res/layout/fragment_medication.xml" value="0.10989583333333333" />
         <entry key="..\:/Users/91860/AndroidStudioProjects/Uni_Trials/app/src/main/res/layout/fragment_participant_details.xml" value="0.25" />
         <entry key="..\:/Users/91860/AndroidStudioProjects/Uni_Trials/app/src/main/res/layout/fragment_participant_helth_info.xml" value="0.264" />
+        <entry key="..\:/Users/91860/AndroidStudioProjects/Uni_Trials/app/src/main/res/layout/layout_hearrate.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/91860/AndroidStudioProjects/Uni_Trials/app/src/main/res/layout/layout_heartrate.xml" value="0.5413533834586466" />
         <entry key="..\:/Users/91860/AndroidStudioProjects/Uni_Trials/app/src/main/res/layout/layout_meds.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/91860/AndroidStudioProjects/Uni_Trials/app/src/main/res/layout/layout_participants.xml" value="0.264" />

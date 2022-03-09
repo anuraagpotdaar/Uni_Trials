@@ -1,12 +1,21 @@
 package com.anuraagpotdaar.unitrials;
 
+import android.os.Binder;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.anuraagpotdaar.unitrials.HelperClasses.HeartRate;
+import com.anuraagpotdaar.unitrials.HelperClasses.HeartRateAdapter;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -14,6 +23,11 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class ParticipantHelthInfoFragment extends Fragment {
+
+    RecyclerView recyclerView;
+    DatabaseReference databaseReference;
+    HeartRateAdapter heartRateAdapter;
+    ArrayList<HeartRate> heartRates;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -53,6 +67,7 @@ public class ParticipantHelthInfoFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
     }
 
     @Override
@@ -62,6 +77,5 @@ public class ParticipantHelthInfoFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_participant_helth_info, container, false);
 
         //here
-
     }
 }
