@@ -54,6 +54,13 @@ public class ParticipantDetailsFragment extends Fragment {
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                if(snapshot.child("gender").getValue(String.class).toLowerCase().startsWith("m")){
+                    binding.ivPartiPhoto.setImageResource(R.drawable.ic_profile_male);
+
+                } else if(snapshot.child("gender").getValue(String.class).toLowerCase().startsWith("f")){
+                    binding.ivPartiPhoto.setImageResource(R.drawable.ic_profile_female);
+                }
                 binding.tvPartiName.setText(snapshot.child("name").getValue(String.class));
 
                 String dob =  snapshot.child("dob").getValue(String.class);
@@ -110,7 +117,9 @@ public class ParticipantDetailsFragment extends Fragment {
             }
         });
 
-
+        binding.btnBackPartiDetails.setOnClickListener(view13 -> {
+            // TODO: 09/03/2022
+        });
 
         return view;
     }
