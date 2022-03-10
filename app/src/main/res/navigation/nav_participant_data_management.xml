@@ -13,6 +13,12 @@
         <action
             android:id="@+id/action_add_meds"
             app:destination="@id/addMedicationFragment" />
+        <action
+            android:id="@+id/action_medication_to_participantDetails"
+            app:popUpTo="@+id/nav_participant_data_management"
+            app:popUpToInclusive="true"
+            app:destination="@id/participantDetailsFragment"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
     <fragment
         android:id="@+id/participantDetailsFragment"
@@ -20,7 +26,7 @@
         android:label="fragment_participant_details"
         tools:layout="@layout/fragment_participant_details" >
         <action
-            android:id="@+id/action_participantDetailsFragment_to_medicationFragment"
+            android:id="@+id/action_open_medicationFragment"
             app:destination="@id/medicationFragment" />
         <action
             android:id="@+id/action_open_medicalHistory"
@@ -44,8 +50,5 @@
         android:name="com.anuraagpotdaar.unitrials.AddMedicationFragment"
         android:label="fragment_add_medication"
         tools:layout="@layout/fragment_add_medication" >
-        <action
-            android:id="@+id/action_addMedicationFragment_to_medicationFragment"
-            app:destination="@id/medicationFragment" />
     </dialog>
 </navigation>
