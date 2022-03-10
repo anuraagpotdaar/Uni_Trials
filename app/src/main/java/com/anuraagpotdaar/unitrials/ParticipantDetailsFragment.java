@@ -98,6 +98,10 @@ public class ParticipantDetailsFragment extends Fragment {
                 binding.btnMeds.setOnClickListener(view1 -> {
                     Navigation.findNavController(view).navigate(R.id.action_open_medicationFragment);
                 });
+
+                binding.btnDetailedHelthInfo.setOnClickListener(view1 -> {
+                    Navigation.findNavController(view).navigate(R.id.action_open_participantHelthInfoFragment);
+                });
             }
 
 
