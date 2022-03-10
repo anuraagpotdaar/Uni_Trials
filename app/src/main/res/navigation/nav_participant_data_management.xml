@@ -30,7 +30,7 @@
             app:destination="@id/medicationFragment" />
         <action
             android:id="@+id/action_open_medicalHistory"
-            app:destination="@id/medicalHistoryFragment" />
+            app:destination="@id/participantHelthInfoFragment" />
         <action
             android:id="@+id/action_participantDetailsFragment_to_participantHelthInfoFragment"
             app:destination="@id/participantHelthInfoFragment" />
