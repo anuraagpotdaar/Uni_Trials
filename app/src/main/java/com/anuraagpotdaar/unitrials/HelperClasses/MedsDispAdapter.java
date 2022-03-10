@@ -40,11 +40,20 @@ public class MedsDispAdapter extends RecyclerView.Adapter<MedsDispAdapter.MedsVi
     @Override
     public void onBindViewHolder(@NonNull MedsViewHolder holder, int position) {
         MedsModel meds = list.get(position);
-        holder.name.setText(String.format("%s-", meds.medName));
-        holder.morning.setText(String.format("%s-", meds.morning));
-        holder.afternoon.setText(String.format("%s-", meds.afternoon));
-        holder.evening.setText(String.format("%s-", meds.evening));
-        holder.night.setText(String.format("%s-", meds.night));
+        holder.name.setText(String.format("%s", meds.getMedName()));
+
+        if(meds.getMorning() != null ) {
+            holder.morning.setText(String.format("%s-", meds.getMorning()));
+        }
+        if(meds.getAfternoon() != null ) {
+            holder.afternoon.setText(String.format("%s-", meds.getAfternoon()));
+        }
+        if(meds.getEvening() != null ) {
+            holder.evening.setText(String.format("%s-", meds.getEvening()));
+        }
+        if(meds.getNight() != null ) {
+            holder.night.setText(String.format("%s", meds.getNight()));
+        }
     }
 
     @Override
@@ -55,7 +64,7 @@ public class MedsDispAdapter extends RecyclerView.Adapter<MedsDispAdapter.MedsVi
     public static class MedsViewHolder extends RecyclerView.ViewHolder {
 
         TextView name, morning, afternoon , evening, night;
-        ImageButton delete;
+        ImageView delete;
 
         public MedsViewHolder(@NonNull View itemView) {
             super(itemView);

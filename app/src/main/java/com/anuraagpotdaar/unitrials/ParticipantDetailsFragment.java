@@ -9,7 +9,6 @@ import android.os.Bundle;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
-import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
@@ -17,9 +16,7 @@ import androidx.navigation.Navigation;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
-import com.anuraagpotdaar.unitrials.HelperClasses.ParticipantModel;
 import com.anuraagpotdaar.unitrials.databinding.FragmentParticipantDetailsBinding;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -28,7 +25,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.Calendar;
-import java.util.Date;
 
 public class ParticipantDetailsFragment extends Fragment {
 
@@ -97,6 +93,10 @@ public class ParticipantDetailsFragment extends Fragment {
 
                 binding.btnMedHistory.setOnClickListener(view1 -> {
                     Navigation.findNavController(view).navigate(R.id.action_open_medicalHistory);
+                });
+
+                binding.btnMeds.setOnClickListener(view1 -> {
+                    Navigation.findNavController(view).navigate(R.id.action_open_medicationFragment);
                 });
             }
 

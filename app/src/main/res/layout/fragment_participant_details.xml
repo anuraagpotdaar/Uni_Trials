@@ -19,7 +19,7 @@
         android:id="@+id/ivPartiPhoto"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="60dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -135,34 +135,46 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvPartiDetailsNextVisit" />
 
-    <EditText
-        android:id="@+id/etPushMsg"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        style="@style/MyEditText"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="15dp"
-        android:maxLines="5"
-        android:gravity="top"
-        android:hint="Hey how do you feeling now...\nIs their any pain?"
-        app:layout_constraintBottom_toTopOf="@+id/btnCall"
+    <TextView
+        android:id="@+id/btnMeds"
+        style="@style/SecondaryButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="View medicines"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnMedHistory" />
 
+    <EditText
+        android:id="@+id/etPushMsg"
+        style="@style/MyEditText"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="15dp"
+        android:gravity="top"
+        android:hint="Hey how do you feeling now...\nIs their any pain?"
+        android:inputType="textMultiLine"
+        android:maxLength="250"
+        app:layout_constraintBottom_toTopOf="@+id/btnCall"
+        app:layout_constraintEnd_toStartOf="@+id/btnSendPushMsg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnMeds" />
+
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnSendPushMsg"
+        style="?attr/materialButtonOutlinedStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="30dp"
         android:text="Send"
         android:textAllCaps="false"
-        style="?attr/materialButtonOutlinedStyle"
         app:layout_constraintBottom_toBottomOf="@+id/etPushMsg"
-        app:layout_constraintEnd_toEndOf="@+id/etPushMsg" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/etPushMsg" />
 
     <Button
         android:id="@+id/btnCall"

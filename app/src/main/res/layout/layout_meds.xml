@@ -15,7 +15,7 @@
         <TextView
             android:id="@+id/tvMedName"
             style="@style/Body.main"
-            android:layout_width="200dp"
+            android:layout_width="180dp"
             android:layout_marginStart="30dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
@@ -36,7 +36,7 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/tvMedName"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="1-" />
+            android:text="0-" />
 
         <TextView
             android:id="@+id/tvMedTime2"
@@ -48,7 +48,7 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/tvMedTime1"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="0-" />
+            android:text="0-" />
 
         <TextView
             android:id="@+id/tvMedTime3"
@@ -60,7 +60,7 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/tvMedTime2"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="1-" />
+            android:text="0-" />
 
         <TextView
             android:id="@+id/tvMedTime4"
@@ -73,7 +73,7 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/tvMedTime3"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="1" />
+            android:text="0" />
 
         <ImageView
             android:id="@+id/ivDelMed"
@@ -83,10 +83,10 @@
             android:layout_marginEnd="30dp"
             android:layout_marginBottom="10dp"
             android:background="@android:color/transparent"
+            android:src="@drawable/ic_delete"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:srcCompat="@drawable/ic_delete" />
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>

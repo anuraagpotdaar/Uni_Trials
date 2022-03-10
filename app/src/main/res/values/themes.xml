@@ -8,6 +8,7 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
         <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="bottomSheetDialogTheme">@style/AddMeds</item>
     </style>
 
     <style name="PrimeNavBtn" parent="Subheading">
@@ -63,12 +64,12 @@
 
     <style name="Body.main" parent="Body">
         <item name="android:textColor">@color/Black</item>
-        <item name="android:textSize">14sp</item>
+        <item name="android:textSize">16sp</item>
     </style>
 
     <style name="Body.child" parent="Body">
         <item name="android:textColor">@color/Gray</item>
-        <item name="android:textSize">12sp</item>
+        <item name="android:textSize">16sp</item>
     </style>
 
     <style name="PrimaryActionButton" parent="Widget.MaterialComponents.Button">
@@ -104,6 +105,16 @@
         <item name="android:textSize">18sp</item>
         <item name="android:inputType">text</item>
         <item name="android:fontFamily">@font/roboto_medium</item>
+    </style>
+
+    <style name="AddMeds" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/AppModalStyle</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowSoftInputMode">adjustResize</item>
+    </style>
+
+    <style name="AppModalStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@color/SmokeWhite</item>
     </style>
 
     <style name="NullBackground">
