@@ -27,10 +27,9 @@
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/tvHRUserName"
         style="@style/Body.main"
         android:layout_marginTop="10dp"
-        android:text="John's Apple Watch SE"
         android:textColor="@color/Black"
         android:textSize="24dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -45,9 +44,10 @@
         android:src="@drawable/ic_doctor_profile"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+        app:layout_constraintTop_toBottomOf="@+id/tvHRUserName" />
 
     <TextView
+        android:id="@+id/textView5"
         style="@style/Heading"
         android:layout_marginTop="10dp"
         android:text="96 BPM"
@@ -55,6 +55,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvHRList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

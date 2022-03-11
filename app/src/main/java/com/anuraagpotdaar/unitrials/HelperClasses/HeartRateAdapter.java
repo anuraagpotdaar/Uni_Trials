@@ -35,8 +35,8 @@ public class HeartRateAdapter extends RecyclerView.Adapter<HeartRateAdapter.HRVi
     @Override
     public void onBindViewHolder(@NonNull HRViewHolder holder, int position) {
         HeartRateModel heartRateModel = list.get(position);
-        holder.date.setText(heartRateModel.date);
-        holder.value.setText(heartRateModel.value);
+        holder.date.setText(heartRateModel.Date);
+        holder.value.setText(heartRateModel.Value);
 
     }
 
