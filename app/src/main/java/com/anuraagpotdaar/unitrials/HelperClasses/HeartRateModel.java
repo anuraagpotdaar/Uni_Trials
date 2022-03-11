@@ -1,12 +1,12 @@
 package com.anuraagpotdaar.unitrials.HelperClasses;
 
-public class HeartRate {
+public class HeartRateModel {
     String date,value;
 
-    public HeartRate() {
+    public HeartRateModel() {
     }
 
-    public HeartRate(String date, String value) {
+    public HeartRateModel(String date, String value) {
         this.date = date;
         this.value = value;
     }

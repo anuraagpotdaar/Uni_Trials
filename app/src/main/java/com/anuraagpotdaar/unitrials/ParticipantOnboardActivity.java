@@ -52,14 +52,37 @@ public class ParticipantOnboardActivity extends AppCompatActivity {
                 String medicalHistory = edt_medicalHistory.getEditableText().toString();
                 String gender = edt_gender.getEditableText().toString();
 
-                count = count+1;
-                ParticipantModel participantModel = new ParticipantModel(name,phone,email,address,gender, dob,medicalHistory,3);
-                reference.child(phone).setValue(participantModel);
+                if (name.matches("")){
+                    edt_name.setError("Can't Empty");
+                    edt_name.requestFocus();
+                }else if (phone.matches("")){
+                    edt_phone.setError("Can't Be Empty");
+                    edt_phone.requestFocus();
+                }else if (email.matches("")){
+                    edt_email.setError("Can't Be Empty");
+                    edt_email.requestFocus();
+                }else if (address.matches("")){
+                    edt_address.setError("Can't Be Empty");
+                    edt_address.requestFocus();
+                }else if (dob.matches("")){
+                    edt_dob.setError("Can't Be Empty");
+                    edt_dob.requestFocus();
+                }else if (medicalHistory.matches("")){
+                    edt_medicalHistory.setError("Can't Be Empty");
+                    edt_medicalHistory.requestFocus();
+                }else if (gender.matches("")){
+                    edt_gender.setError("Can't Be Empty");
+                    edt_gender.requestFocus();
+                }else{
+                    count = count+1;
+                    ParticipantModel participantModel = new ParticipantModel(name,phone,email,address,gender, dob,medicalHistory,3);
+                    reference.child(phone).setValue(participantModel);
 
-                Toast.makeText(ParticipantOnboardActivity.this, "Patient added successfully", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ParticipantOnboardActivity.this, "Patient added successfully", Toast.LENGTH_SHORT).show();
 
-                Intent intent = new Intent(getApplicationContext(),DashboardActivity.class);
-                startActivity(intent);
+                    Intent intent = new Intent(getApplicationContext(),DashboardActivity.class);
+                    startActivity(intent);
+                }
 
             }
         });
