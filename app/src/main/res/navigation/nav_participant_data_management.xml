@@ -34,6 +34,9 @@
         <action
             android:id="@+id/action_open_participantHelthInfoFragment"
             app:destination="@id/participantHelthInfoFragment" />
+        <action
+            android:id="@+id/action_open_medicalHistoryFragment"
+            app:destination="@id/medicalHistoryFragment" />
     </fragment>
     <fragment
         android:id="@+id/medicalHistoryFragment"

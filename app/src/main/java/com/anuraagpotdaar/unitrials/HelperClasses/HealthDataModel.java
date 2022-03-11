@@ -1,6 +1,6 @@
 package com.anuraagpotdaar.unitrials.HelperClasses;
 
-public class HeartRateModel {
+public class HealthDataModel {
     String Date, Value;
 
     public String getDate() {
@@ -9,5 +9,13 @@ public class HeartRateModel {
 
     public String getValue() {
         return Value;
+    }
+
+    public void setDate(String date) {
+        Date = date;
+    }
+
+    public void setValue(String value) {
+        Value = value;
     }
 }

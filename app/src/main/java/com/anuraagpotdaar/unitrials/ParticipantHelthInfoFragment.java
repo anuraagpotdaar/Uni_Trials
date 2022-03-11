@@ -12,9 +12,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.anuraagpotdaar.unitrials.HelperClasses.HeartRateModel;
-import com.anuraagpotdaar.unitrials.HelperClasses.HeartRateAdapter;
-import com.anuraagpotdaar.unitrials.databinding.FragmentParticipantDetailsBinding;
+import com.anuraagpotdaar.unitrials.HelperClasses.DashPartiDispAdapter;
+import com.anuraagpotdaar.unitrials.HelperClasses.HealthDataModel;
+import com.anuraagpotdaar.unitrials.HelperClasses.HealthDataReadingAdapter;
+import com.anuraagpotdaar.unitrials.HelperClasses.MedsDispAdapter;
+import com.anuraagpotdaar.unitrials.HelperClasses.MedsModel;
 import com.anuraagpotdaar.unitrials.databinding.FragmentParticipantHelthInfoBinding;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -25,11 +27,17 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 public class ParticipantHelthInfoFragment extends Fragment {
+
     private FragmentParticipantHelthInfoBinding binding;
+
+    RecyclerView recyclerView ;
+    DatabaseReference databaseReference;
+    HealthDataReadingAdapter healthDataReadingAdapter;
+    ArrayList<HealthDataModel> healthDataList;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
     @Override
@@ -39,35 +47,65 @@ public class ParticipantHelthInfoFragment extends Fragment {
         binding = FragmentParticipantHelthInfoBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
 
-        RecyclerView recyclerView ;
-        DatabaseReference databaseReference;
-        HeartRateAdapter heartRateAdapter;
-        ArrayList<HeartRateModel> list;
-
-
-
         String selected = getActivity().getIntent().getStringExtra("selected participant");
 
-        Toast.makeText(getContext(), selected, Toast.LENGTH_SHORT).show();
-        databaseReference = FirebaseDatabase.getInstance().getReference("Patient List/"+selected+"/Heart Rate");
-        binding.tvHRUserName.setText("Ali");
-       // recyclerView=binding.rvHRList;
-       //  recyclerView.setHasFixedSize(true);
-       // recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerView = binding.rvReadingList;
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        list= new ArrayList<>();
-        heartRateAdapter = new HeartRateAdapter(getContext(),list);
-        //recyclerView.setAdapter(heartRateAdapter);
+        healthDataList= new ArrayList<>();
+
+
+        binding.toggleButton.addOnButtonCheckedListener((group, checkedId, isChecked) -> {
+            if (binding.btnHeart.isChecked()) {
+                displayData(selected,"Heart rate");
+                healthDataReadingAdapter = new HealthDataReadingAdapter(getContext(),healthDataList);
+                recyclerView.setAdapter(healthDataReadingAdapter);
+            } else if (binding.btnOxy.isChecked()) {
+                displayData(selected,"Oxygen");
+                healthDataReadingAdapter = new HealthDataReadingAdapter(getContext(),healthDataList);
+                recyclerView.setAdapter(healthDataReadingAdapter);
+            } else if (binding.btnBP.isChecked()) {
+                displayData(selected,"BP");
+                healthDataReadingAdapter = new HealthDataReadingAdapter(getContext(),healthDataList);
+                recyclerView.setAdapter(healthDataReadingAdapter);
+            }
+        });
+
+        return binding.getRoot();
+    }
+
+    private void displayData(String selected, String selectedHealthData) {
+
+        databaseReference = FirebaseDatabase.getInstance().getReference("Patient List/"+selected+"/Health Data/"+ selectedHealthData);
+
+        healthDataList.clear();
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot dataSnapshot: snapshot.getChildren()) {
+                    HealthDataModel healthDataModel = new HealthDataModel();
+                    healthDataModel.setDate(dataSnapshot.getKey());
 
-                for (DataSnapshot dataSnapshot : snapshot.getChildren()){
-                    HeartRateModel heartRateModel = new HeartRateModel();
-                    String  demo = snapshot.child("Date").toString();
-                    Toast.makeText(getContext(), demo, Toast.LENGTH_SHORT).show();//list.add(heartRateModel);
+                    DatabaseReference dataRef = FirebaseDatabase.getInstance().getReference("Patient List/"+ selected + "/Health Data/" +selectedHealthData);
+
+                    dataRef.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            for (DataSnapshot dataSnapshot: snapshot.getChildren()) {
+                                healthDataModel.setValue(snapshot.child(healthDataModel.getDate()).getValue(String.class));
+                            }
+                            healthDataReadingAdapter.notifyDataSetChanged();
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+                    });
+                    healthDataList.add(healthDataModel);
                 }
-                heartRateAdapter.notifyDataSetChanged();
+                healthDataReadingAdapter.notifyDataSetChanged();
             }
 
             @Override
@@ -75,11 +113,11 @@ public class ParticipantHelthInfoFragment extends Fragment {
 
             }
         });
-
-
-
-        return inflater.inflate(R.layout.fragment_participant_helth_info, container, false);
-
     }
 
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding = null;
+    }
 }

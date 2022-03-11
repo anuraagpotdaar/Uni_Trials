@@ -16,16 +16,18 @@ import com.google.firebase.database.FirebaseDatabase;
 public class ParticipantOnboardActivity extends AppCompatActivity {
 
     FirebaseDatabase rootNode;
-    DatabaseReference reference;
+    DatabaseReference partiRef, docRef;
     EditText edt_name,edt_phone,edt_email,edt_address,edt_dob,edt_medicalHistory,edt_gender;
     TextView btn_cancel,btn_done;
-    int count=0;
 
+    int count;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_participant_onboard);
+
+        count = Integer.parseInt(getIntent().getStringExtra("participants"));
 
         edt_name=findViewById(R.id.text_name);
         edt_phone=findViewById(R.id.text_phone_number);
@@ -42,7 +44,7 @@ public class ParticipantOnboardActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 rootNode = FirebaseDatabase.getInstance();
-                reference = rootNode.getReference("Patient List");
+                partiRef = rootNode.getReference("Patient List");
 
                 String name = edt_name.getEditableText().toString();
                 String phone = edt_phone.getEditableText().toString();
@@ -75,13 +77,16 @@ public class ParticipantOnboardActivity extends AppCompatActivity {
                     edt_gender.requestFocus();
                 }else{
                     count = count+1;
+
+                    docRef = FirebaseDatabase.getInstance().getReference("Doctors/"+getIntent().getStringExtra("id"));
+                    docRef.child("patients").setValue(count);
+
                     ParticipantModel participantModel = new ParticipantModel(name,phone,email,address,gender, dob,medicalHistory,3);
-                    reference.child(phone).setValue(participantModel);
+                    partiRef.child(phone).setValue(participantModel);
 
                     Toast.makeText(ParticipantOnboardActivity.this, "Patient added successfully", Toast.LENGTH_SHORT).show();
 
-                    Intent intent = new Intent(getApplicationContext(),DashboardActivity.class);
-                    startActivity(intent);
+                    finish();
                 }
 
             }

@@ -67,17 +67,18 @@ public class DashPartiDispAdapter extends RecyclerView.Adapter<DashPartiDispAdap
         boolean isExpanded = list.get(position).isExpanded();
         holder.expandable.setVisibility(isExpanded ? View.VISIBLE :View.GONE);
 
-        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("Patient List/"+parti.phone);
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("Patient List/"+parti.phone+"/Health Data/");
 
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                String currentHealthDetails = snapshot.child("heart").child("current").getValue(String.class) + " BPH\n" +
-                        snapshot.child("oxygen").child("current").getValue(String.class) + " %\n" +
-                        snapshot.child("bp").child("current").getValue(String.class) + " mm Hg\n";
+                String currentHealthDetails = snapshot.child("Heart rate").child("Current").getValue(String.class) + " BPH\n" +
+                        snapshot.child("Oxygen").child("Current").getValue(String.class) + " %\n" +
+                        snapshot.child("BP").child("Current").getValue(String.class) + " mm Hg\n";
 
                 holder.details.setText(currentHealthDetails);
             }
+
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
@@ -115,9 +116,10 @@ public class DashPartiDispAdapter extends RecyclerView.Adapter<DashPartiDispAdap
             });
 
             btnMore.setOnClickListener(view -> {
+                ParticipantModel parti = list.get(getBindingAdapterPosition());
                 Intent myIntent = new Intent(context, ParticipantDataManagementActivity.class);
                 myIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                myIntent.putExtra("selected participant", phone);
+                myIntent.putExtra("selected participant", parti.phone);
                 context.startActivity(myIntent);
             });
         }

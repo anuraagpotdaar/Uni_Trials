@@ -45,10 +45,24 @@
         <entry key="..\:/Users/91860/AndroidStudioProjects/Uni_Trials/app/src/main/res/layout/layout_heartrate.xml" value="0.264" />
         <entry key="..\:/Users/91860/AndroidStudioProjects/Uni_Trials/app/src/main/res/layout/layout_meds.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/91860/AndroidStudioProjects/Uni_Trials/app/src/main/res/layout/layout_participants.xml" value="0.264" />
+        <entry key="..\:/Users/Anuraag/StudioProjects/Uni_Trials/app/src/main/res/drawable/ic_doctor_profile.xml" value="0.332" />
+        <entry key="..\:/Users/Anuraag/StudioProjects/Uni_Trials/app/src/main/res/layout/activity_dashboard.xml" value="0.3625" />
+        <entry key="..\:/Users/Anuraag/StudioProjects/Uni_Trials/app/src/main/res/layout/activity_participant_data_management.xml" value="0.1762917933130699" />
+        <entry key="..\:/Users/Anuraag/StudioProjects/Uni_Trials/app/src/main/res/layout/activity_participant_onboard.xml" value="0.3625" />
+        <entry key="..\:/Users/Anuraag/StudioProjects/Uni_Trials/app/src/main/res/layout/activity_profile_and_settings.xml" value="0.1762917933130699" />
+        <entry key="..\:/Users/Anuraag/StudioProjects/Uni_Trials/app/src/main/res/layout/activity_splash_screen.xml" value="0.1762917933130699" />
+        <entry key="..\:/Users/Anuraag/StudioProjects/Uni_Trials/app/src/main/res/layout/fragment_add_medication.xml" value="0.1762917933130699" />
+        <entry key="..\:/Users/Anuraag/StudioProjects/Uni_Trials/app/src/main/res/layout/fragment_medical_history.xml" value="0.1762917933130699" />
+        <entry key="..\:/Users/Anuraag/StudioProjects/Uni_Trials/app/src/main/res/layout/fragment_medication.xml" value="0.25" />
+        <entry key="..\:/Users/Anuraag/StudioProjects/Uni_Trials/app/src/main/res/layout/fragment_participant_details.xml" value="0.33" />
+        <entry key="..\:/Users/Anuraag/StudioProjects/Uni_Trials/app/src/main/res/layout/fragment_participant_helth_info.xml" value="0.33" />
+        <entry key="..\:/Users/Anuraag/StudioProjects/Uni_Trials/app/src/main/res/layout/layout_heartrate.xml" value="0.1762917933130699" />
+        <entry key="..\:/Users/Anuraag/StudioProjects/Uni_Trials/app/src/main/res/layout/layout_meds.xml" value="0.1762917933130699" />
+        <entry key="..\:/Users/Anuraag/StudioProjects/Uni_Trials/app/src/main/res/layout/layout_participants.xml" value="0.3625" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

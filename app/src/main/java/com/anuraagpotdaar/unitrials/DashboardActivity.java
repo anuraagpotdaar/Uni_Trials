@@ -46,9 +46,9 @@ public class DashboardActivity extends AppCompatActivity {
         View view = binding.getRoot();
         setContentView(view);
 
-        binding.tvDashboardUsername.setText(getIntent().getStringExtra("Doctor_Name"));
-
         DatabaseReference partiCount = FirebaseDatabase.getInstance().getReference("Doctors/"+getIntent().getStringExtra("id"));
+
+        binding.tvDashboardUsername.setText(String.format("Dr%s", getIntent().getStringExtra("Doctor_Name")));
 
         partiCount.addValueEventListener(new ValueEventListener() {
             @Override
@@ -64,6 +64,8 @@ public class DashboardActivity extends AppCompatActivity {
 
         binding.ibSettings.setOnClickListener(view1 -> {
             Intent intent = new Intent(getApplicationContext(),ProfileAndSettings.class);
+            intent.putExtra("Doctor_Name",getIntent().getStringExtra("Doctor_Name"));
+            intent.putExtra("parti_count",binding.tvParticipantCount.getText().toString());
             startActivity(intent);
         });
 

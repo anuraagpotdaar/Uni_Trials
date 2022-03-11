@@ -10,31 +10,35 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.anuraagpotdaar.unitrials.databinding.ActivityDashboardBinding;
+import com.anuraagpotdaar.unitrials.databinding.ActivityProfileAndSettingsBinding;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 
 public class ProfileAndSettings extends AppCompatActivity {
 
-    TextView btn_back;
-    Button btn_logOut;
+    private ActivityProfileAndSettingsBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile_and_settings);
+        binding = ActivityProfileAndSettingsBinding.inflate(getLayoutInflater());
+        View view = binding.getRoot();
+        setContentView(view);
 
-        btn_back = findViewById(R.id.btnSettingsBack);
-        btn_logOut = findViewById(R.id.btn_logout);
+        binding.tvDoctorName.setText(getIntent().getStringExtra("Doctor_Name"));
+        binding.tvPartiCount.setText(String.format("%s", getIntent().getStringExtra("parti_count")));
 
 
-        btn_back.setOnClickListener(view -> {
+        binding.btnSettingsBack.setOnClickListener(view1 -> {
             finish();
         });
 
-        btn_logOut.setOnClickListener(view -> {
-            Intent intent = new Intent(getApplicationContext(),LoginActivity.class);
+        binding.btnLogout.setOnClickListener(view2 -> {
+            Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
             startActivity(intent);
+            finish();
         });
     }
 }

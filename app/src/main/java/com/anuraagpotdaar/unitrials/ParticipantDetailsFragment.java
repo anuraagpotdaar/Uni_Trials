@@ -79,9 +79,9 @@ public class ParticipantDetailsFragment extends Fragment {
                         break;
                 }
 
-                String currentHealthDetails = snapshot.child("heart").child("current").getValue(String.class) + " BPH\n" +
-                        snapshot.child("oxygen").child("current").getValue(String.class) + " %\n" +
-                        snapshot.child("bp").child("current").getValue(String.class) + " mm Hg\n";
+                String currentHealthDetails = snapshot.child("Health Data").child("Heart rate").child("Current").getValue(String.class) + " BPH\n" +
+                        snapshot.child("Health Data").child("oxygen").child("Current").getValue(String.class) + " %\n" +
+                        snapshot.child("Health Data").child("bp").child("Current").getValue(String.class) + " mm Hg\n";
 
                 binding.tvPartiHealthData2.setText(currentHealthDetails);
 
@@ -92,7 +92,7 @@ public class ParticipantDetailsFragment extends Fragment {
                 binding.tvPartiDetails.setText(personalDetails);
 
                 binding.btnMedHistory.setOnClickListener(view1 -> {
-                    Navigation.findNavController(view).navigate(R.id.action_open_medicalHistory);
+                    Navigation.findNavController(view).navigate(R.id.action_open_medicalHistoryFragment);
                 });
 
                 binding.btnMeds.setOnClickListener(view1 -> {

@@ -14,13 +14,13 @@ import com.anuraagpotdaar.unitrials.R;
 
 import java.util.ArrayList;
 
-public class HeartRateAdapter extends RecyclerView.Adapter<HeartRateAdapter.HRViewHolder> {
+public class HealthDataReadingAdapter extends RecyclerView.Adapter<HealthDataReadingAdapter.HRViewHolder> {
 
     Context context;
 
-    ArrayList<HeartRateModel> list;
+    ArrayList<HealthDataModel> list;
 
-    public HeartRateAdapter(Context context, ArrayList<HeartRateModel> list) {
+    public HealthDataReadingAdapter(Context context, ArrayList<HealthDataModel> list) {
         this.context = context;
         this.list = list;
     }
@@ -34,9 +34,10 @@ public class HeartRateAdapter extends RecyclerView.Adapter<HeartRateAdapter.HRVi
 
     @Override
     public void onBindViewHolder(@NonNull HRViewHolder holder, int position) {
-        HeartRateModel heartRateModel = list.get(position);
-        holder.date.setText(heartRateModel.Date);
-        holder.value.setText(heartRateModel.Value);
+        holder.setIsRecyclable(false);
+        HealthDataModel healthDataModel = list.get(position);
+        holder.date.setText(healthDataModel.Date);
+        holder.value.setText(healthDataModel.Value);
 
     }
 
@@ -51,15 +52,8 @@ public class HeartRateAdapter extends RecyclerView.Adapter<HeartRateAdapter.HRVi
         CardView card;
         public HRViewHolder (@NonNull View itemView) {
             super(itemView);
-            card = itemView.findViewById(R.id.cvHeart);
-
             value = itemView.findViewById(R.id.text_value);
             date = itemView.findViewById(R.id.text_date);
-
-            card.setOnClickListener(view -> {
-                HeartRateModel parti = list.get(getBindingAdapterPosition());
-                notifyItemChanged(getAbsoluteAdapterPosition());
-            });
 
         }
     }
