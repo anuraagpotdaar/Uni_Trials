@@ -14,7 +14,7 @@ import com.anuraagpotdaar.unitrials.R;
 
 import java.util.ArrayList;
 
-public class HeartRateAdapter extends RecyclerView.Adapter<HeartRateAdapter.DpdViewHolder> {
+public class HeartRateAdapter extends RecyclerView.Adapter<HeartRateAdapter.HRViewHolder> {
 
     Context context;
 
@@ -27,13 +27,13 @@ public class HeartRateAdapter extends RecyclerView.Adapter<HeartRateAdapter.DpdV
 
     @NonNull
     @Override
-    public DpdViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(context).inflate(R.layout.layout_heartrate,parent,false);
-        return new DpdViewHolder(v);
+    public HRViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View v  = LayoutInflater.from(context).inflate(R.layout.layout_heartrate,parent,false);
+        return new HRViewHolder(v);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull DpdViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull HRViewHolder holder, int position) {
         HeartRateModel heartRateModel = list.get(position);
         holder.date.setText(heartRateModel.date);
         holder.value.setText(heartRateModel.value);
@@ -45,11 +45,11 @@ public class HeartRateAdapter extends RecyclerView.Adapter<HeartRateAdapter.DpdV
         return list.size();
     }
 
-    public class DpdViewHolder extends RecyclerView.ViewHolder {
+    public class HRViewHolder extends RecyclerView.ViewHolder {
 
         TextView date,value;
         CardView card;
-        public DpdViewHolder(@NonNull View itemView) {
+        public HRViewHolder (@NonNull View itemView) {
             super(itemView);
             card = itemView.findViewById(R.id.cvHeart);
 

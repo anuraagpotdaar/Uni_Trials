@@ -19,10 +19,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.ArrayList;
 
 public class ParticipantHelthInfoFragment extends Fragment {
-
-
-
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,10 +31,12 @@ public class ParticipantHelthInfoFragment extends Fragment {
         DatabaseReference databaseReference;
         HeartRateAdapter heartRateAdapter;
         ArrayList<HeartRateModel> heartRateModels;
+
         String selected = getActivity().getIntent().getStringExtra("selected participant");
         Toast.makeText(getContext(), selected, Toast.LENGTH_SHORT).show();
         databaseReference = FirebaseDatabase.getInstance().getReference("Patient List/"+selected+"/Data/Heart Rate");
         return inflater.inflate(R.layout.fragment_participant_helth_info, container, false);
 
     }
+
 }
