@@ -85,6 +85,7 @@ public class ParticipantHelthInfoFragment extends Fragment {
 
         databaseReference = FirebaseDatabase.getInstance().getReference("Patient List/"+selected+"/Health Data/"+ selectedHealthData);
 
+        healthDataList.clear();
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -111,8 +112,6 @@ public class ParticipantHelthInfoFragment extends Fragment {
                         }
                     });
                     healthDataList.add(healthDataModel);
-                    Toast.makeText(getContext(), String.valueOf(healthDataList.size()), Toast.LENGTH_SHORT).show();
-
                 }
                 healthDataReadingAdapter.notifyDataSetChanged();
             }
@@ -124,7 +123,6 @@ public class ParticipantHelthInfoFragment extends Fragment {
         });
         healthDataReadingAdapter = new HealthDataReadingAdapter(getContext(),healthDataList);
         recyclerView.setAdapter(healthDataReadingAdapter);
-        healthDataReadingAdapter.notifyDataSetChanged();
     }
 
     @Override
