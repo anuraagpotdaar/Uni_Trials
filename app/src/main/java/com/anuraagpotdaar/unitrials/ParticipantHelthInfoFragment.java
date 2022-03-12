@@ -49,26 +49,32 @@ public class ParticipantHelthInfoFragment extends Fragment {
 
         String selected = getActivity().getIntent().getStringExtra("selected participant");
 
+        binding.tvHealthDataUserName.setText(getActivity().getIntent().getStringExtra("participant name"));
+
+
         recyclerView = binding.rvReadingList;
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-
         healthDataList= new ArrayList<>();
 
+        binding.ivDataType.setImageResource(R.drawable.ic_heart);
+        binding.tvHaedingHealthData.setText("Heart rate");
+        displayData(selected,"Heart rate");
 
         binding.toggleButton.addOnButtonCheckedListener((group, checkedId, isChecked) -> {
             if (binding.btnHeart.isChecked()) {
+                binding.ivDataType.setImageResource(R.drawable.ic_heart);
+                binding.tvHaedingHealthData.setText("Heart rate");
                 displayData(selected,"Heart rate");
-                healthDataReadingAdapter = new HealthDataReadingAdapter(getContext(),healthDataList);
-                recyclerView.setAdapter(healthDataReadingAdapter);
             } else if (binding.btnOxy.isChecked()) {
+                binding.ivDataType.setImageResource(R.drawable.ic_oxygen);
+                binding.tvHaedingHealthData.setText("Oxygen");
                 displayData(selected,"Oxygen");
-                healthDataReadingAdapter = new HealthDataReadingAdapter(getContext(),healthDataList);
-                recyclerView.setAdapter(healthDataReadingAdapter);
+
             } else if (binding.btnBP.isChecked()) {
+                binding.ivDataType.setImageResource(R.drawable.ic_bp);
+                binding.tvHaedingHealthData.setText("Blood pressure");
                 displayData(selected,"BP");
-                healthDataReadingAdapter = new HealthDataReadingAdapter(getContext(),healthDataList);
-                recyclerView.setAdapter(healthDataReadingAdapter);
             }
         });
 
@@ -79,12 +85,13 @@ public class ParticipantHelthInfoFragment extends Fragment {
 
         databaseReference = FirebaseDatabase.getInstance().getReference("Patient List/"+selected+"/Health Data/"+ selectedHealthData);
 
-        healthDataList.clear();
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot dataSnapshot: snapshot.getChildren()) {
+                    binding.tvCurrent.setText(snapshot.child("Current").getValue(String.class));
                     HealthDataModel healthDataModel = new HealthDataModel();
+
                     healthDataModel.setDate(dataSnapshot.getKey());
 
                     DatabaseReference dataRef = FirebaseDatabase.getInstance().getReference("Patient List/"+ selected + "/Health Data/" +selectedHealthData);
@@ -104,6 +111,8 @@ public class ParticipantHelthInfoFragment extends Fragment {
                         }
                     });
                     healthDataList.add(healthDataModel);
+                    Toast.makeText(getContext(), String.valueOf(healthDataList.size()), Toast.LENGTH_SHORT).show();
+
                 }
                 healthDataReadingAdapter.notifyDataSetChanged();
             }
@@ -113,6 +122,9 @@ public class ParticipantHelthInfoFragment extends Fragment {
 
             }
         });
+        healthDataReadingAdapter = new HealthDataReadingAdapter(getContext(),healthDataList);
+        recyclerView.setAdapter(healthDataReadingAdapter);
+        healthDataReadingAdapter.notifyDataSetChanged();
     }
 
     @Override

@@ -120,6 +120,7 @@ public class DashPartiDispAdapter extends RecyclerView.Adapter<DashPartiDispAdap
                 Intent myIntent = new Intent(context, ParticipantDataManagementActivity.class);
                 myIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 myIntent.putExtra("selected participant", parti.phone);
+                myIntent.putExtra("participant name", parti.name);
                 context.startActivity(myIntent);
             });
         }

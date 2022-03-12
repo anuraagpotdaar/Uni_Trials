@@ -80,8 +80,8 @@ public class ParticipantDetailsFragment extends Fragment {
                 }
 
                 String currentHealthDetails = snapshot.child("Health Data").child("Heart rate").child("Current").getValue(String.class) + " BPH\n" +
-                        snapshot.child("Health Data").child("oxygen").child("Current").getValue(String.class) + " %\n" +
-                        snapshot.child("Health Data").child("bp").child("Current").getValue(String.class) + " mm Hg\n";
+                        snapshot.child("Health Data").child("Oxygen").child("Current").getValue(String.class) + " %\n" +
+                        snapshot.child("Health Data").child("BP").child("Current").getValue(String.class) + " mm Hg\n";
 
                 binding.tvPartiHealthData2.setText(currentHealthDetails);
 

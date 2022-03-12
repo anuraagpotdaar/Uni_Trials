@@ -15,9 +15,9 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/tvHaedingHealthData"
         style="@style/Heading"
-        android:text="Heart Rate"
+        tools:text="Heart Rate"
         android:textColor="@color/Purple"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,7 +30,7 @@
         android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        app:layout_constraintTop_toBottomOf="@+id/tvHaedingHealthData"
         tools:text="John's Apple Watch" />
 
     <ImageView
@@ -44,7 +44,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tvHealthDataUserName" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/tvCurrent"
         style="@style/Heading"
         android:layout_marginTop="10dp"
         tools:text="96 BPM"
@@ -64,7 +64,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintTop_toBottomOf="@+id/tvCurrent" />
 
     <com.google.android.material.button.MaterialButtonToggleGroup
         android:id="@+id/toggleButton"

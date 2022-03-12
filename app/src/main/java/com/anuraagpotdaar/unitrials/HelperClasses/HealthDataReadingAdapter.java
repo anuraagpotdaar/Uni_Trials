@@ -34,7 +34,6 @@ public class HealthDataReadingAdapter extends RecyclerView.Adapter<HealthDataRea
 
     @Override
     public void onBindViewHolder(@NonNull HRViewHolder holder, int position) {
-        holder.setIsRecyclable(false);
         HealthDataModel healthDataModel = list.get(position);
         holder.date.setText(healthDataModel.Date);
         holder.value.setText(healthDataModel.Value);
